@@ -1500,7 +1500,7 @@ GameObject:
   - component: {fileID: 2093498699}
   m_Layer: 0
   m_Name: RedCup
-  m_TagString: Untagged
+  m_TagString: Cups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1513,7 +1513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093498697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1595.43, y: 7847.7, z: 12255.475}
+  m_LocalPosition: {x: -1580.43, y: 7827.7, z: 12255.475}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 908955197}
@@ -5975,6 +5975,8 @@ GameObject:
   - component: {fileID: 2887372620979806463}
   - component: {fileID: 5766964861792125303}
   - component: {fileID: 3811868235758326749}
+  - component: {fileID: 621491188517460287}
+  - component: {fileID: 621491188517460286}
   m_Layer: 0
   m_Name: Body1 8
   m_TagString: Untagged
@@ -5982,6 +5984,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &621491188517460286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621491188517460285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5c853f916debb418320751ccf1cd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gripper: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
+  Suck_Is_Active: 0
+--- !u!136 &621491188517460287
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621491188517460285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0009999999
+  m_Height: 0.00214
+  m_Direction: 1
+  m_Center: {x: -0.004392636, y: 0.0019071905, z: -0.000000007450581}
 --- !u!33 &623404112502468642
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9036,7 +9069,7 @@ GameObject:
   - component: {fileID: 1123422281985983949}
   m_Layer: 0
   m_Name: GreenCup
-  m_TagString: Untagged
+  m_TagString: Cups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24026,7 +24059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123422281985983948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1598.9828, y: 7818.3823, z: 12255.475}
+  m_LocalPosition: {x: -1598.9828, y: 7820.382, z: 12255.475}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 908955197}
@@ -27361,7 +27394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4509602952145082806}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 3311783198624578454}
@@ -30486,6 +30519,8 @@ GameObject:
   - component: {fileID: 4056789375109441386}
   - component: {fileID: 7730250794187132326}
   - component: {fileID: 3527091119112076561}
+  - component: {fileID: 4509602952145082808}
+  - component: {fileID: 4509602952145082807}
   m_Layer: 0
   m_Name: Body1 7
   m_TagString: Untagged
@@ -30493,6 +30528,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4509602952145082807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509602952145082806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5c853f916debb418320751ccf1cd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gripper: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
+  Suck_Is_Active: 0
+--- !u!136 &4509602952145082808
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509602952145082806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0009999999
+  m_Height: 0.00214
+  m_Direction: 1
+  m_Center: {x: -0.004392636, y: 0.0019071905, z: -0.000000007450581}
 --- !u!1 &4512397117222176883
 GameObject:
   m_ObjectHideFlags: 0
@@ -31620,6 +31686,8 @@ GameObject:
   - component: {fileID: 6937484824796153349}
   - component: {fileID: 1755480627367667597}
   - component: {fileID: 8985418333355226407}
+  - component: {fileID: 4668857709566476233}
+  - component: {fileID: 4668857709566476232}
   m_Layer: 0
   m_Name: Body1 8
   m_TagString: Untagged
@@ -31627,6 +31695,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4668857709566476232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668857709566476231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5c853f916debb418320751ccf1cd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gripper: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
+  Suck_Is_Active: 0
+--- !u!136 &4668857709566476233
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668857709566476231}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0009999999
+  m_Height: 0.00214
+  m_Direction: 1
+  m_Center: {x: -0.0043926435, y: 0.0019071905, z: 0.0000000018626451}
 --- !u!1 &4671613801981117887
 GameObject:
   m_ObjectHideFlags: 0
@@ -42031,6 +42130,8 @@ GameObject:
   - component: {fileID: 8368331088647403659}
   - component: {fileID: 880477009385920771}
   - component: {fileID: 7554281666364525481}
+  - component: {fileID: 6102289676167627083}
+  - component: {fileID: 6102289676167627082}
   m_Layer: 0
   m_Name: Body1 8
   m_TagString: Untagged
@@ -42038,6 +42139,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6102289676167627082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102289676167627081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5c853f916debb418320751ccf1cd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gripper: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
+  Suck_Is_Active: 0
+--- !u!136 &6102289676167627083
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102289676167627081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.001
+  m_Height: 0.00214
+  m_Direction: 1
+  m_Center: {x: -0.004392644, y: 0.0019071905, z: 0.000000007450581}
 --- !u!33 &6102636547311184575
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46071,6 +46203,7 @@ GameObject:
   - component: {fileID: 6766900406854942848}
   - component: {fileID: 6766900406854942850}
   - component: {fileID: 6766900406854942849}
+  - component: {fileID: 6766900406854942851}
   m_Layer: 0
   m_Name: RobotRacer
   m_TagString: Untagged
@@ -46127,6 +46260,26 @@ MonoBehaviour:
   speed: 50
   rotation_speed: 5
   gravity: -9.81
+--- !u!114 &6766900406854942851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766900406854942847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb8c609e178dde48a53c24461a1e27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suck_1_Left: {fileID: 6102289676167627081}
+  Suck_1_Right: {fileID: 7108115270534037954}
+  Suck_2_Left: {fileID: 621491188517460285}
+  Suck_2_Right: {fileID: 4509602952145082806}
+  Suck_3_Left: {fileID: 4668857709566476231}
+  Suck_3_Right: {fileID: 8557319044946657100}
+  yellow: {fileID: 8291272948121497963, guid: ee823e7c37f0d634fa1707c266fdb658, type: 3}
+  white: {fileID: -7986855199053626473, guid: 05684df44278f56429aae71229c9ee91, type: 3}
 --- !u!4 &6766997813445108379
 Transform:
   m_ObjectHideFlags: 0
@@ -48196,6 +48349,8 @@ GameObject:
   - component: {fileID: 7240898288921427742}
   - component: {fileID: 3996686234233312722}
   - component: {fileID: 7837095128396408165}
+  - component: {fileID: 7108115270534037955}
+  - component: {fileID: 7108115270534037956}
   m_Layer: 0
   m_Name: Body1 7
   m_TagString: Untagged
@@ -48203,6 +48358,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &7108115270534037955
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108115270534037954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.001
+  m_Height: 0.00214
+  m_Direction: 1
+  m_Center: {x: -0.004392644, y: 0.0019071905, z: 0.000000007450581}
+--- !u!114 &7108115270534037956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108115270534037954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5c853f916debb418320751ccf1cd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gripper: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
+  Suck_Is_Active: 0
 --- !u!1 &7110169706297978499
 GameObject:
   m_ObjectHideFlags: 0
@@ -58212,6 +58398,8 @@ GameObject:
   - component: {fileID: 8077342105924125072}
   - component: {fileID: 2527567830374116188}
   - component: {fileID: 8693734020138130411}
+  - component: {fileID: 8557319044946657102}
+  - component: {fileID: 8557319044946657101}
   m_Layer: 0
   m_Name: Body1 7
   m_TagString: Untagged
@@ -58219,6 +58407,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8557319044946657101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8557319044946657100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5c853f916debb418320751ccf1cd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gripper: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
+  Suck_Is_Active: 0
+--- !u!136 &8557319044946657102
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8557319044946657100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0009999999
+  m_Height: 0.00214
+  m_Direction: 1
+  m_Center: {x: -0.004392651, y: 0.0019071905, z: 0}
 --- !u!1 &8557554280026953466
 GameObject:
   m_ObjectHideFlags: 0
