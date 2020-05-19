@@ -10,9 +10,9 @@ public class Control_player : MonoBehaviour
 
     //Key controller
     public CharacterController controller;
-    public float speed = 50f;
-    public float rotation_speed = 5f;
-    public float gravity = -9.81f;
+    public float speed = 40f;
+    public float rotation_speed = 1f;
+    public float gravity = -98.1f;
 
     Vector3 velocity;
 
@@ -30,20 +30,18 @@ public class Control_player : MonoBehaviour
 
     void Keycontrol()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Vertical");
+        float z = Input.GetAxis("Horizontal");
 
         float y = Input.GetAxis("Submit");
 
         playerBody.transform.Rotate(Vector3.up * y * rotation_speed);
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = transform.right * x - transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
     }
-
-
 
 }

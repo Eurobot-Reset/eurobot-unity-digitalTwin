@@ -16,7 +16,7 @@ public class CameraRotator : MonoBehaviour
     public float OrbitDampening = 10f;
     public float ScrollDampening = 6f;
 
-    public bool CameraDisabled = false;
+    public bool CameraDisabled;
 
 
     // Use this for initialization
@@ -24,6 +24,10 @@ public class CameraRotator : MonoBehaviour
     {
         this._XForm_Camera = this.transform;
         this._XForm_Parent = this.transform.parent;
+        this._CameraDistance = 1f;
+        this.CameraDisabled = false;
+        _LocalRotation.x = 150f;
+        _LocalRotation.y = 15f;
     }
 
 

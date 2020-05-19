@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cups
+  - Borders
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Cups
+  - Borders
   - 
   - 
   - 
