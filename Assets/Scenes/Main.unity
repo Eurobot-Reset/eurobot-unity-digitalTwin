@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 144739174}
   - component: {fileID: 144739173}
   - component: {fileID: 144739175}
+  - component: {fileID: 144739176}
   m_Layer: 0
   m_Name: ThirdPersonCamera
   m_TagString: Untagged
@@ -250,6 +251,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd2a0a25b231e34cbfb413cbbe1890b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMain: {fileID: 963194225}
+  cameraThirdPerson: {fileID: 144739171}
+  cameraFront: {fileID: 1712268834}
+  CameraNumber: 2
+--- !u!114 &144739176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144739171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8265d39ffb222478e1ed2ec2c39c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZoomSpeed: 1000
+  speed: 20
 --- !u!1 &510355839
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +660,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -676,6 +695,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd2a0a25b231e34cbfb413cbbe1890b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMain: {fileID: 963194225}
+  cameraThirdPerson: {fileID: 144739171}
+  cameraFront: {fileID: 1712268834}
+  CameraNumber: 1
 --- !u!1 &1037214395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1269,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 2
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -1267,6 +1290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd2a0a25b231e34cbfb413cbbe1890b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMain: {fileID: 963194225}
+  cameraThirdPerson: {fileID: 144739171}
+  cameraFront: {fileID: 1712268834}
+  CameraNumber: 3
 --- !u!1 &1743492203
 GameObject:
   m_ObjectHideFlags: 0
@@ -46406,9 +46433,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7760693684087026284}
   - component: {fileID: 6766900406854942848}
-  - component: {fileID: 6766900406854942850}
   - component: {fileID: 6766900406854942849}
   - component: {fileID: 6766900406854942851}
+  - component: {fileID: 6766900406854942850}
   m_Layer: 0
   m_Name: RobotRacer
   m_TagString: Untagged
@@ -46460,7 +46487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204cc876d743e9c4d92ec76a16286b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBody: {fileID: 0}
+  playerBody: {fileID: 6766900406854942847}
   controller: {fileID: 6766900406854942849}
   speed: 50
   rotation_speed: 5

@@ -1,0 +1,46 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Animations;
+
+public class ControlFat : MonoBehaviour
+{
+
+    public GameObject playerBody;
+
+    //Key controller
+    public CharacterController controller;
+    public float speed = 50f;
+    public float rotation_speed = 5f;
+    public float gravity = -9.81f;
+
+    Vector3 velocity;
+
+    void Start()
+    {
+        playerBody = GameObject.Find("RobotFat");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||  Input.GetKey(KeyCode.RightArrow) ||  Input.GetKey(KeyCode.LeftArrow) ||  Input.GetKey(KeyCode.Z) ||  Input.GetKey(KeyCode.X))
+            {Keycontrol();}
+    }
+
+
+    void Keycontrol()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        float y = Input.GetAxis("Submit");
+
+        playerBody.transform.Rotate(Vector3.up * y * rotation_speed);
+
+        Vector3 move = transform.right * z - transform.forward * x;
+        controller.Move(move * speed * Time.deltaTime);
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
+    }
+}

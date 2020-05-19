@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class Control_player : MonoBehaviour
+public class ControlRacer : MonoBehaviour
 {
 
     public GameObject playerBody;
@@ -24,24 +24,23 @@ public class Control_player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Keycontrol();
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) ||  Input.GetKey(KeyCode.A) ||  Input.GetKey(KeyCode.S) ||  Input.GetKey(KeyCode.Q) ||  Input.GetKey(KeyCode.E))
+            {Keycontrol();}
     }
 
 
     void Keycontrol()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        float y = Input.GetAxis("Submit");
+        float x = Input.GetAxis("RacerFront");
+        float y = Input.GetAxis("RacerSide");
+        float z = Input.GetAxis("RacerRotation");
 
-        playerBody.transform.Rotate(Vector3.up * y * rotation_speed);
+        playerBody.transform.Rotate(-Vector3.up * z * rotation_speed);
 
-        Vector3 move = transform.right * z - transform.forward * x;
+        Vector3 move = transform.right * x + transform.forward * y;
         controller.Move(move * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
     }
-
-
 }
