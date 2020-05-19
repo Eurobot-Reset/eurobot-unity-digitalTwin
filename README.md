@@ -50,3 +50,7 @@ Continue the sentence "After pulling this commit I'll get...":
 ### To remove latest pull:
 
     git reset --hard a0d3fe6, // where  a0d3fe6 - is a head id
+	
+### Merging tool execution snippet
+	
+	git mergetool --tool=unityyamlmerge
