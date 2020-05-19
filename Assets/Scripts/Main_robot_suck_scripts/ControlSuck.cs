@@ -27,7 +27,7 @@ public class ControlSuck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             Previous_Suck = Current_Suck;
             if (Current_Suck == Suck_1_Left)
