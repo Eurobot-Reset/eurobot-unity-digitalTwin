@@ -86,6 +86,7 @@ public class Suck : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Collided with: " );
         if ((other.gameObject.tag == "GreenCups") || (other.gameObject.tag == "RedCups"))
         {
             if (gripper_action == "collect")
