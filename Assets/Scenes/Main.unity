@@ -461,6 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 908955197}
+  - component: {fileID: 908955198}
   m_Layer: 0
   m_Name: Cups
   m_TagString: Untagged
@@ -484,6 +485,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &908955198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908955196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e487bac99780b47bd7238bf830d2ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  green_cups: []
+  red_cups: []
+  x_position: 0
+  y_position: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,7 +1517,7 @@ GameObject:
   - component: {fileID: 2093498699}
   m_Layer: 0
   m_Name: RedCup
-  m_TagString: Cups
+  m_TagString: RedCups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9069,7 +9086,7 @@ GameObject:
   - component: {fileID: 1123422281985983949}
   m_Layer: 0
   m_Name: GreenCup
-  m_TagString: Cups
+  m_TagString: GreenCups
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46204,6 +46221,7 @@ GameObject:
   - component: {fileID: 6766900406854942850}
   - component: {fileID: 6766900406854942849}
   - component: {fileID: 6766900406854942851}
+  - component: {fileID: 6766900406854942852}
   m_Layer: 0
   m_Name: RobotRacer
   m_TagString: Untagged
@@ -46280,6 +46298,22 @@ MonoBehaviour:
   Suck_3_Right: {fileID: 8557319044946657100}
   yellow: {fileID: 8291272948121497963, guid: ee823e7c37f0d634fa1707c266fdb658, type: 3}
   white: {fileID: -7986855199053626473, guid: 05684df44278f56429aae71229c9ee91, type: 3}
+--- !u!114 &6766900406854942852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766900406854942847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01a13be655af1e4fa1e2be4cd2b55e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gripper: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 2
+  y_gripper_up: 9
 --- !u!4 &6766997813445108379
 Transform:
   m_ObjectHideFlags: 0
