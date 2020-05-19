@@ -22,7 +22,7 @@ public class ControlGripperForWindsocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad3))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             if (gripper_is_up)
             {

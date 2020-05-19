@@ -31,14 +31,14 @@ public class Suck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if ((Input.GetKey(KeyCode.Keypad1)) && Suck_Is_Active)
+       if ((Input.GetKey(KeyCode.X)) && Suck_Is_Active)
        {
            go_down = true;
            gripper_action = "collect";
 
        }
 
-       if ((Input.GetKey(KeyCode.Keypad2)) && Suck_Is_Active)
+       if ((Input.GetKey(KeyCode.C)) && Suck_Is_Active)
        {
            go_down = true;
            gripper_action = "release";
