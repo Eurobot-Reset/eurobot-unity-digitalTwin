@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu_controls : MonoBehaviour
+public class UI_Menu_controls : MonoBehaviour
 {
 
 
@@ -15,6 +15,6 @@ public class Menu_controls : MonoBehaviour
 
     public void ExitPressed()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Menu");
     }
 }
