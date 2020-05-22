@@ -15,6 +15,10 @@ public class Compass : MonoBehaviour
     {
         isNorth = (Random.value > 0.5f);
         stop = false;
+        if(isNorth)
+            tableStateHandler.weathervaneStatus = "N";
+        else
+            tableStateHandler.weathervaneStatus = "S";
     }
 
     // Update is called once per frame
