@@ -9,16 +9,16 @@ public class ControlFatBoy : MonoBehaviour
     public GameObject playerBody;
 
     //Key controller
-    public CharacterController controller;
+    public Rigidbody rb;
     public float speed = 50f;
     public float rotation_speed = 5f;
-    public float gravity = -9.81f;
 
     Vector3 velocity;
 
     void Start()
     {
         playerBody = GameObject.Find("FatBoy");
+        rb = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -38,9 +38,6 @@ public class ControlFatBoy : MonoBehaviour
         playerBody.transform.Rotate(-Vector3.up * z * rotation_speed);
 
         Vector3 move = transform.right * y + transform.forward * x;
-        controller.Move(move * speed * Time.deltaTime);
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
+        rb.MovePosition(transform.position + (move * speed * Time.deltaTime));
     }
 }
