@@ -10,7 +10,7 @@ public class UI_Menu_controls : MonoBehaviour
 
     public void PlayPressed()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Main");
     }
 
     public void ExitPressed()
