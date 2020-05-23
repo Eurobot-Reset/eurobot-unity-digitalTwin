@@ -20,13 +20,20 @@ public class Robot_G1 : MonoBehaviour
         }
         else
         {
-            Fatboy_color = PlayerPrefs.GetString("Fatboy_color");
-            Racer_color = "None";
+            if (Robot_name == "Fatboy")
+            {
+                Fatboy_color = PlayerPrefs.GetString("Fatboy_color");
+                Racer_color = "None";
+            }
+            else
+            {
+                Fatboy_color = PlayerPrefs.GetString("Fatboy_color");
+                Racer_color = PlayerPrefs.GetString("Racer_color");
+            }
+            
         }
             
-    }
-       
-            
+    }          
 
 }
         
