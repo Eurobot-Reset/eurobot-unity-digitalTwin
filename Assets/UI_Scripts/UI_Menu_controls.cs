@@ -25,12 +25,12 @@ public class UI_Menu_controls : MonoBehaviour
 
     public void Play1Pressed()
     {
-        SceneManager.LoadScene("Game1");
+        SceneManager.LoadScene("Main");
     }
 
     public void Play2Pressed()
     {
-        SceneManager.LoadScene("Game2");
+        SceneManager.LoadScene("Main");
     }
 
     public void ExitPressed()
@@ -40,6 +40,6 @@ public class UI_Menu_controls : MonoBehaviour
 
     public void StrategyPressed()
     {
-        SceneManager.LoadScene("Strategy");
+        SceneManager.LoadScene("Main");
     }
 }
