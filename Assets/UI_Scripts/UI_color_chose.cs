@@ -64,4 +64,11 @@ public class UI_color_chose : MonoBehaviour
         Racer_color_button.GetComponentInChildren<Text>().text = Racer_color;
 
     }
+
+    public static string getColor(string robot) 
+    {
+        if (robot.Equals("Racer")) return Racer_color;
+        else if (robot.Equals("Fatboy")) return Fatboy_color;
+        return Fatboy_color;
+    }
 }

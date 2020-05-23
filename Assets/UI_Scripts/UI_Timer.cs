@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class UI_Timer : MonoBehaviour
 {
     public GameObject GameOverPanel;
-    public float t = 100f;
+    public static float t = 100f;
     public Text Text_Timer;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class UI_Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Text_Timer.text = "Time:" + t.ToString();
+        if (t <= 100f) Text_Timer.text = "Time:" + t.ToString("F0");
+        else Text_Timer.text = "Time: inf.";
         t -= Time.deltaTime;
 
         if (t <= 0.0f)
