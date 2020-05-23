@@ -1,0 +1,49 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class UI_Menu_controls : MonoBehaviour
+{
+
+    /*    private static string Robot;
+
+        public void FatboyPressed()
+        {
+            SceneManager.LoadScene("Game1");
+            Robot = "Fatboy";
+            PlayerPrefs.SetString("Robot", Robot);
+
+        }
+        public void RacerPressed()
+        {
+            SceneManager.LoadScene("Game1");
+            Robot = "Racer";
+            PlayerPrefs.SetString("Robot", Robot);
+        }
+        */
+
+    public void Play1Pressed()
+    {
+        SceneManager.LoadScene("Game1");
+    }
+
+    public void Play2Pressed()
+    {
+<<<<<<< HEAD
+        SceneManager.LoadScene("Game2");
+=======
+        SceneManager.LoadScene("Main");
+>>>>>>> f95c900efcf138917ce0430af3ee487a5b5bb481
+    }
+
+    public void ExitPressed()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void StrategyPressed()
+    {
+        SceneManager.LoadScene("Strategy");
+    }
+}
