@@ -25,6 +25,7 @@ namespace RosSharp.RosBridgeClient
         public Transform SubscribedTransform;
 
         private float previousRealTime;
+        private float flipper;
         public Vector3 linearVelocity;
         public Vector3 angularVelocity;
         private bool isMessageReceived;
@@ -37,6 +38,18 @@ namespace RosSharp.RosBridgeClient
         protected override void ReceiveMessage(MessageTypes.Geometry.Twist message)
         {
             linearVelocity = ToVector3(message.linear).Ros2Unity();
+            flipper = linearVelocity.y;
+            linearVelocity.y = linearVelocity.z;
+            linearVelocity.z = flipper;
+
+            flipper = linearVelocity.y;
+            linearVelocity.y = -linearVelocity.x;
+            linearVelocity.x = flipper;
+
+            flipper = linearVelocity.y;
+            linearVelocity.y = linearVelocity.z;
+            linearVelocity.z = flipper;
+
             angularVelocity = -ToVector3(message.angular).Ros2Unity();
             isMessageReceived = true;
         }
