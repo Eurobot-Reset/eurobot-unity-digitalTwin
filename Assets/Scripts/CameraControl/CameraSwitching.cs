@@ -8,7 +8,7 @@ public class CameraSwitching : MonoBehaviour
     public GameObject cameraThirdPersonFatboy;
     public GameObject cameraThirdPersonRacer;
     public GameObject cameraTop;
-    public int CameraNumber = 2;
+    public int CameraNumber = 4;
     
     // Start is called before the first frame update
     void Start()
