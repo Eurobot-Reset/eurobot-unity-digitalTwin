@@ -5,8 +5,9 @@ using UnityEngine;
 public class CameraSwitching : MonoBehaviour
 {
     public GameObject cameraMain;
-    public GameObject cameraThirdPerson;
-    public GameObject cameraFront;
+    public GameObject cameraThirdPersonFatboy;
+    public GameObject cameraThirdPersonRacer;
+    public GameObject cameraTop;
     public int CameraNumber = 2;
     
     // Start is called before the first frame update
@@ -29,6 +30,10 @@ public class CameraSwitching : MonoBehaviour
         {
             CameraNumber = 3;
         }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            CameraNumber = 4;
+        }
 
         CameraViewChange(CameraNumber);
     }
@@ -40,20 +45,30 @@ public class CameraSwitching : MonoBehaviour
         {
         case 1:
             cameraMain.SetActive(true);
-            cameraThirdPerson.SetActive(false);
-            cameraFront.SetActive(false);
+            cameraThirdPersonFatboy.SetActive(false);
+            cameraThirdPersonRacer.SetActive(false);
+            cameraTop.SetActive(false);
             break;
 
         case 2:
             cameraMain.SetActive(false);
-            cameraThirdPerson.SetActive(true);
-            cameraFront.SetActive(false);
+            cameraThirdPersonFatboy.SetActive(true);
+            cameraThirdPersonRacer.SetActive(false);
+            cameraTop.SetActive(false);
             break;
             
         case 3:
             cameraMain.SetActive(false);
-            cameraThirdPerson.SetActive(false);
-            cameraFront.SetActive(true);
+            cameraThirdPersonFatboy.SetActive(false);
+            cameraThirdPersonRacer.SetActive(true);
+            cameraTop.SetActive(false);
+            break;
+
+        case 4:
+            cameraMain.SetActive(false);
+            cameraThirdPersonFatboy.SetActive(false);
+            cameraThirdPersonRacer.SetActive(false);
+            cameraTop.SetActive(true);
             break;
 
         }

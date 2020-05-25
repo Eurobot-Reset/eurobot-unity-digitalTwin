@@ -11,7 +11,7 @@ public class ControlFatBoyRigidBody : MonoBehaviour
     
     public float speed = 500f;
     public float torque;
-    public float rotation_speed = 5f;
+    public float rotationSpeed = 5f;
     public float gravity = -9.81f;
 
     Vector3 velocity;

@@ -10,7 +10,7 @@ public class ControlRacerRigidBody : MonoBehaviour
     
     public float speed = 50f;
     public float torque;
-    public float rotation_speed = 5f;
+    public float rotationSpeed = 5f;
     public float gravity = -9.81f;
 
     Vector3 velocity;
