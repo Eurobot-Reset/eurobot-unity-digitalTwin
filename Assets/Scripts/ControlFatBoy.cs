@@ -38,6 +38,6 @@ public class ControlFatBoy : MonoBehaviour
         playerBody.transform.Rotate(-Vector3.up * z * rotation_speed);
 
         Vector3 move = transform.right * y + transform.forward * x;
-        rb.MovePosition(transform.position + (move * speed * Time.deltaTime));
+        rb.MovePosition(playerBody.transform.position + (move * speed * Time.deltaTime));
     }
 }
