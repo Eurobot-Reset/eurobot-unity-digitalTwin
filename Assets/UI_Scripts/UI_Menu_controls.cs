@@ -12,13 +12,23 @@ public class UI_Menu_controls : MonoBehaviour
 
         string robot = UI_robot_chose.getRobot();
         if (robot.Equals("Racer")) {
+            Score_calc.racer = true;
             GameMode.robot[0] = true;
             GameMode.robot[1] = false;
-            if (UI_robot_chose.getColor(robot).Equals("Yellow")) GameMode.isYellowSide[0] = true;    
+            if (UI_robot_chose.getColor(robot).Equals("Yellow"))
+            {
+                GameMode.isYellowSide[0] = true;
+                Score_calc.racer_color_is_yellow = true;
+            }
         } else {
+            Score_calc.fatboy = true;
             GameMode.robot[0] = false;
             GameMode.robot[1] = true;
-            if (UI_robot_chose.getColor(robot).Equals("Yellow")) GameMode.isYellowSide[1] = true;    
+            if (UI_robot_chose.getColor(robot).Equals("Yellow"))
+            {
+                GameMode.isYellowSide[1] = true;
+                Score_calc.fatboy_color_is_yellow = true;
+            }
         }
         GameMode.restart = true;
     }
@@ -29,10 +39,12 @@ public class UI_Menu_controls : MonoBehaviour
 
         GameMode.robot[0] = true;
         GameMode.robot[1] = true;
+        Score_calc.racer = true;
+        Score_calc.fatboy = true;
 
-        if (UI_color_chose.getColor("Racer").Equals("Yellow")) GameMode.isYellowSide[0] = true;
+        if (UI_color_chose.getColor("Racer").Equals("Yellow")) { Score_calc.racer_color_is_yellow = true; GameMode.isYellowSide[0] = true; }
         else GameMode.isYellowSide[0] = false;
-        if (UI_color_chose.getColor("Fatboy").Equals("Yellow")) GameMode.isYellowSide[1] = true;
+        if (UI_color_chose.getColor("Fatboy").Equals("Yellow")) { Score_calc.fatboy_color_is_yellow = true; GameMode.isYellowSide[1] = true; }
         else GameMode.isYellowSide[1] = false;
 
         GameMode.restart = true;

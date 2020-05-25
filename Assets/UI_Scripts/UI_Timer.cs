@@ -9,10 +9,13 @@ public class UI_Timer : MonoBehaviour
     public GameObject GameOverPanel;
     public static float t = 100f;
     public Text Text_Timer;
+    public Text ScoreText;
+    public Text TotalScoreText;
     
     // Start is called before the first frame update
     void Start()
     {
+        ScoreText = GameObject.Find("Text_Score").GetComponent<Text>();
         GameOverPanel.SetActive(false);
     }
 
@@ -27,6 +30,8 @@ public class UI_Timer : MonoBehaviour
         {
             t = 0;
             GameOverPanel.SetActive(true);
+            Text TotalScoreText = GameObject.Find("Text_Total_Sore").GetComponent<Text>();
+            TotalScoreText.text = "Total "+ ScoreText.text;
         };
 
 
