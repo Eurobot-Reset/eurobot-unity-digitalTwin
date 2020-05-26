@@ -29,9 +29,13 @@ namespace RosSharp.RosBridgeClient
         public Vector3 linearVelocity;
         public Vector3 angularVelocity;
         private bool isMessageReceived;
+        Rigidbody rb;
+        public float speedScaleFactor;
+        public float torqueScaleFactor;
 
         protected override void Start()
         {
+            rb = GetComponent<Rigidbody>();
             base.Start();
         }
 
@@ -72,12 +76,17 @@ namespace RosSharp.RosBridgeClient
         {
             float deltaTime = Time.realtimeSinceStartup - previousRealTime;
 
-            SubscribedTransform.Translate(linearVelocity * deltaTime);
-            SubscribedTransform.Rotate(Vector3.forward, angularVelocity.x * deltaTime);
-            SubscribedTransform.Rotate(Vector3.up, angularVelocity.y * deltaTime);
-            SubscribedTransform.Rotate(Vector3.left, angularVelocity.z * deltaTime);
+            //SubscribedTransform.Translate(linearVelocity * deltaTime);
+            //SubscribedTransform.Rotate(Vector3.forward, angularVelocity.x * deltaTime);
+            //SubscribedTransform.Rotate(Vector3.up, angularVelocity.y * deltaTime);
+            //SubscribedTransform.Rotate(Vector3.left, angularVelocity.z * deltaTime);
 
             previousRealTime = Time.realtimeSinceStartup;
+
+            Vector3 moveVector = transform.right * linearVelocity.x + transform.forward * linearVelocity.z;
+
+            rb.AddForce(moveVector * speedScaleFactor);
+            rb.AddTorque(transform.up * angularVelocity.y * torqueScaleFactor);
 
             isMessageReceived = false;
         }
