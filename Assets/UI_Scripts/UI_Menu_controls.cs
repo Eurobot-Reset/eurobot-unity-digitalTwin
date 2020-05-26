@@ -65,4 +65,8 @@ public class UI_Menu_controls : MonoBehaviour
         UI_Timer.t = 99999f;
         SceneManager.LoadScene("Main");
     }
+
+    public void doExitGame() {
+        Application.Quit();
+    }
 }
