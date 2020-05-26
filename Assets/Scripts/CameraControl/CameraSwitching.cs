@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraSwitching : MonoBehaviour
 {
-    public GameObject cameraMain;
-    public GameObject cameraThirdPersonFatboy;
-    public GameObject cameraThirdPersonRacer;
-    public GameObject cameraTop;
-    public int CameraNumber = 4;
+    public Camera cameraRacer;
+    public Camera cameraFatboy;
+    public Camera cameraThirdPersonFatboy;
+    public Camera cameraThirdPersonRacer;
+    public Camera cameraTop;
     
     // Start is called before the first frame update
     void Start()
@@ -20,58 +20,47 @@ public class CameraSwitching : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            CameraNumber = 1;
+            cameraRacer.enabled = true;
+            cameraFatboy.enabled = false;
+            cameraThirdPersonFatboy.enabled = false;
+            cameraThirdPersonRacer.enabled = false;
+            cameraTop.enabled = false;
         }
+
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            CameraNumber = 2;
+            cameraRacer.enabled = false;
+            cameraFatboy.enabled = true;
+            cameraThirdPersonFatboy.enabled = false;
+            cameraThirdPersonRacer.enabled = false;
+            cameraTop.enabled = false;
         }
+
         if (Input.GetKey(KeyCode.Alpha3))
         {
-            CameraNumber = 3;
+            cameraRacer.enabled = false;
+            cameraFatboy.enabled = false;
+            cameraThirdPersonFatboy.enabled = true;
+            cameraThirdPersonRacer.enabled = false;
+            cameraTop.enabled = false;
         }
+
         if (Input.GetKey(KeyCode.Alpha4))
         {
-            CameraNumber = 4;
+            cameraRacer.enabled = false;
+            cameraFatboy.enabled = false;
+            cameraThirdPersonFatboy.enabled = false;
+            cameraThirdPersonRacer.enabled = true;
+            cameraTop.enabled = false;
         }
 
-        CameraViewChange(CameraNumber);
-    }
-
-    void CameraViewChange(int counter)
-    {
-
-        switch (counter)
+        if (Input.GetKey(KeyCode.Alpha5))
         {
-        case 1:
-            cameraMain.SetActive(true);
-            cameraThirdPersonFatboy.SetActive(false);
-            cameraThirdPersonRacer.SetActive(false);
-            cameraTop.SetActive(false);
-            break;
-
-        case 2:
-            cameraMain.SetActive(false);
-            cameraThirdPersonFatboy.SetActive(true);
-            cameraThirdPersonRacer.SetActive(false);
-            cameraTop.SetActive(false);
-            break;
-            
-        case 3:
-            cameraMain.SetActive(false);
-            cameraThirdPersonFatboy.SetActive(false);
-            cameraThirdPersonRacer.SetActive(true);
-            cameraTop.SetActive(false);
-            break;
-
-        case 4:
-            cameraMain.SetActive(false);
-            cameraThirdPersonFatboy.SetActive(false);
-            cameraThirdPersonRacer.SetActive(false);
-            cameraTop.SetActive(true);
-            break;
-
+            cameraRacer.enabled = false;
+            cameraFatboy.enabled = false;
+            cameraThirdPersonFatboy.enabled = false;
+            cameraThirdPersonRacer.enabled = false;
+            cameraTop.enabled = true;
         }
-
     }
 }
