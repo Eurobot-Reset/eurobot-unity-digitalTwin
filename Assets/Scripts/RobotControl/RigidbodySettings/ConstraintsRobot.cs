@@ -10,6 +10,6 @@ public class ConstraintsRobot : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         //This locks the RigidBody so that it does not move or rotate in the some axis.
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 }

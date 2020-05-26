@@ -50,7 +50,11 @@ namespace RosSharp.RosBridgeClient
             linearVelocity.y = linearVelocity.z;
             linearVelocity.z = flipper;
 
+            linearVelocity *= 10;
+
             angularVelocity = -ToVector3(message.angular).Ros2Unity();
+            // angularVelocity.y = -angularVelocity.y;
+            angularVelocity *= 10;
             isMessageReceived = true;
         }
 
