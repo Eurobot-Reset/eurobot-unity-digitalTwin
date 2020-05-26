@@ -15,6 +15,7 @@ public class GameMode : MonoBehaviour
 
     private GameObject racer;
     private GameObject fat;
+    private GameObject lighthouse;
 
     // Load scene event
     void OnEnable()
@@ -42,6 +43,10 @@ public class GameMode : MonoBehaviour
     {
         fat = GameObject.Find("FatBoy");
         racer = GameObject.Find("RobotRacer");
+        lighthouse = GameObject.Find("Light_House");
+
+        lighthouse.transform.eulerAngles = new Vector3(0, 90f, 0);
+
         Time.timeScale = 1;
         
         if(!strategyMode) {
@@ -62,6 +67,7 @@ public class GameMode : MonoBehaviour
             racer.transform.position = new Vector3(11.5f,7.3f,67.8f);
             // Rotation
             racer.transform.eulerAngles = new Vector3(0, 60f, 0);
+
         } else {
             racer.transform.position = new Vector3(287.6f,7.3f,66.9f);
             racer.transform.eulerAngles = new Vector3(0, 120f, 0);
@@ -70,10 +76,23 @@ public class GameMode : MonoBehaviour
         if(isYellowSide[1]) {
             fat.transform.position = new Vector3(29.3f,18.5f,92.3f);
             fat.transform.eulerAngles = new Vector3(0, -150f, 0);
+
         } else {
             fat.transform.position = new Vector3(270.1f,18.5f,93.1f);
             fat.transform.eulerAngles = new Vector3(0, 150f, 0);
         }
+
+        if (isYellowSide[1])
+        {
+            lighthouse.transform.position = new Vector3(22.09f, 9.28f, -10f);
+        }
+        else
+        {
+            lighthouse.transform.position = new Vector3(277.54f, 9.28f, -10f);
+        }
+
+
+
 
         restart = false;
     }
