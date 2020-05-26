@@ -8,6 +8,7 @@ public class UI_Menu_controls : MonoBehaviour
 
     public void Play1Pressed()
     {
+        GameMode.Game_2_active = false; // режим кате надо
         SceneManager.LoadScene("Main");
 
         string robot = UI_robot_chose.getRobot();
@@ -27,6 +28,7 @@ public class UI_Menu_controls : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
 
+        GameMode.Game_2_active = true; // режим кате надо
         GameMode.robot[0] = true;
         GameMode.robot[1] = true;
 
@@ -40,11 +42,13 @@ public class UI_Menu_controls : MonoBehaviour
 
     public void ExitPressed()
     {
+        GameMode.Game_2_active = false; // режим кате надо
         SceneManager.LoadScene("Menu");
     }
 
     public void StrategyPressed()
     {
+        GameMode.Game_2_active = false; // режим кате надо
         GameMode.strategyMode = true;
         GameMode.restart = true;
         UI_Timer.t = 99999f;

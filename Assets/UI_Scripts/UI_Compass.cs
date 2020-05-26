@@ -7,12 +7,9 @@ using UnityEngine.SceneManagement;
 public class UI_Compass : MonoBehaviour
 {
     public Text Text_Compass;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+
+ 
     // Update is called once per frame
     void Update()
     {
