@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameMode : MonoBehaviour
 {
+    public static bool Game_2_active; // режим кате надо
     public static bool restart = true;
     //Side variable: array of 2 (0 - racer, 1 - big) | 0 - blue; 1 - yellow;
     public static bool[] isYellowSide = new bool[2] {false, false};

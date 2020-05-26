@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class Score_calc : MonoBehaviour
 {
-    private Text ScoreText;
-    private Text RedCupsText;
-    private Text GreenCupsText;
-    private Text WindsocksText;
+    // private Text ScoreText;
+    // private Text RedCupsText;
+    // private Text GreenCupsText;
+    // private Text WindsocksText;
     private int Score;
 
+    public Text ScoreText;
+    public Text RedCupsText;
+    public Text GreenCupsText;
+    public Text WindsocksText;
+    
     public string side_color;
     //public bool racer = GameMode.robot[0];
     //public bool fatboy = GameMode.robot[1];
@@ -51,10 +56,10 @@ public class Score_calc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScoreText = GameObject.Find("Text_Score").GetComponent<Text>();
-        RedCupsText = GameObject.Find("Text_Red_Cups").GetComponent<Text>();
-        GreenCupsText = GameObject.Find("Text_Green_Cups").GetComponent<Text>();
-        WindsocksText = GameObject.Find("Text_windsock").GetComponent<Text>();
+       // ScoreText = GameObject.Find("Text_Score").GetComponent<Text>();
+       // RedCupsText = GameObject.Find("Text_Red_Cups").GetComponent<Text>();
+       // GreenCupsText = GameObject.Find("Text_Green_Cups").GetComponent<Text>();
+       // WindsocksText = GameObject.Find("Text_windsock").GetComponent<Text>();
 
         if (racer)
         {
