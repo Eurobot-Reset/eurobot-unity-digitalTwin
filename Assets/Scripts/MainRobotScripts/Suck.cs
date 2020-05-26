@@ -58,6 +58,7 @@ public class Suck : MonoBehaviour
                if ((gripper_action == "release") && (Cup != null))
                {
                    Cup.transform.parent = CupsFree.transform;
+                   Cup.GetComponent<Rigidbody>().useGravity = true;
                    Cup = null;
                    Cup_taken = false;
 
@@ -97,6 +98,7 @@ public class Suck : MonoBehaviour
                     Cup.transform.parent = transform;
                     _followOffsetPosition = Cup.transform.localPosition;
                     _followOffsetRotation = Cup.transform.rotation * Quaternion.Inverse(transform.rotation);
+                    Cup.GetComponent<Rigidbody>().useGravity = false;
                     Cup_taken = true;
                 }
             }
