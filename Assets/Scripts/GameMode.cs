@@ -10,7 +10,7 @@ public class GameMode : MonoBehaviour
     //Side variable: array of 2 (0 - racer, 1 - big) | 0 - blue; 1 - yellow;
     public static bool[] isYellowSide = new bool[2] {false, false};
     //Choosed Robots variable: array of 2 (0 - racer, 1 - big) | 1 - robot is set, 0 - robot is not setted
-    public static bool[] robot = new bool[2] {true, true};
+    public static bool[] robot = new bool[2] {false,false};
     //Strategy game mode
     public static bool strategyMode = false;
 
