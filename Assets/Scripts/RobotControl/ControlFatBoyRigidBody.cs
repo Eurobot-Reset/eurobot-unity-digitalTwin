@@ -31,8 +31,8 @@ public class ControlFatBoyRigidBody : MonoBehaviour
 
     void Keycontrol()
     {
-        float x = Input.GetAxis("FatBoyFront");
-        float y = Input.GetAxis("FatBoySide");
+        float x = -Input.GetAxis("FatBoyFront");
+        float y = -Input.GetAxis("FatBoySide");
         float z = Input.GetAxis("FatBoyRotation");
 
         Vector3 move = transform.right * y + transform.forward * x;

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UI_Timer : MonoBehaviour
 {
     public GameObject GameOverPanel;
-    public static float t = 100f;
+    public static float t = 99999f;
     public Text Text_Timer;
     
     // Start is called before the first frame update

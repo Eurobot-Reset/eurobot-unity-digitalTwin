@@ -20,6 +20,8 @@ public class UI_Menu_controls : MonoBehaviour
             GameMode.robot[1] = true;
             if (UI_robot_chose.getColor(robot).Equals("Yellow")) GameMode.isYellowSide[1] = true;    
         }
+
+        UI_Timer.t = 100f;
         GameMode.restart = true;
     }
 
@@ -35,6 +37,7 @@ public class UI_Menu_controls : MonoBehaviour
         if (UI_color_chose.getColor("Fatboy").Equals("Yellow")) GameMode.isYellowSide[1] = true;
         else GameMode.isYellowSide[1] = false;
 
+        UI_Timer.t = 100f;
         GameMode.restart = true;
     }
 

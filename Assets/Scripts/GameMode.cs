@@ -7,9 +7,9 @@ public class GameMode : MonoBehaviour
 {
     public static bool restart = true;
     //Side variable: array of 2 (0 - racer, 1 - big) | 0 - blue; 1 - yellow;
-    public static bool[] isYellowSide;
+    public static bool[] isYellowSide = new bool[2] {false, false};
     //Choosed Robots variable: array of 2 (0 - racer, 1 - big) | 1 - robot is set, 0 - robot is not setted
-    public static bool[] robot;
+    public static bool[] robot = new bool[2] {true, true};
     //Strategy game mode
     public static bool strategyMode = false;
 
@@ -24,12 +24,6 @@ public class GameMode : MonoBehaviour
     void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void Start()
-    {
-        isYellowSide = new bool[2] {false, false};
-        robot = new bool[2] {false, false};
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -52,9 +46,10 @@ public class GameMode : MonoBehaviour
             else fat.SetActive(false);
         } else {
             //Init strategy game mode
+            robot[0] = true;
+            robot[1] = true;
             racer.SetActive(true);
             fat.SetActive(true);
-            UI_Timer.t = 99999f;
         }
 
         if(isYellowSide[0]) {

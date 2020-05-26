@@ -13,13 +13,26 @@ public class CameraSwitching : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameMode.robot[0]) {
+            cameraRacer.enabled = true;
+            cameraFatboy.enabled = false;
+            cameraThirdPersonFatboy.enabled = false;
+            cameraThirdPersonRacer.enabled = false;
+            cameraTop.enabled = false;
+        } else {
+            cameraRacer.enabled = false;
+            cameraFatboy.enabled = true;
+            cameraThirdPersonFatboy.enabled = false;
+            cameraThirdPersonRacer.enabled = false;
+            cameraTop.enabled = false;
+        }
         
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Alpha1))
-        {
+        {     
             cameraRacer.enabled = true;
             cameraFatboy.enabled = false;
             cameraThirdPersonFatboy.enabled = false;
