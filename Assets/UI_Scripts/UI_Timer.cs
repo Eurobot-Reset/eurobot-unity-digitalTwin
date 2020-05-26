@@ -15,7 +15,6 @@ public class UI_Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         GameOverPanel.SetActive(false);
     }
 

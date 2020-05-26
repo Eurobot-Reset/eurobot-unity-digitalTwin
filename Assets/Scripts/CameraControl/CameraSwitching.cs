@@ -39,7 +39,6 @@ public class CameraSwitching : MonoBehaviour
             cameraThirdPersonRacer.enabled = false;
             cameraTop.enabled = false;
         }
-
         if (Input.GetKey(KeyCode.Alpha2))
         {
             cameraRacer.enabled = false;
@@ -48,7 +47,6 @@ public class CameraSwitching : MonoBehaviour
             cameraThirdPersonRacer.enabled = false;
             cameraTop.enabled = false;
         }
-
         if (Input.GetKey(KeyCode.Alpha3))
         {
             cameraRacer.enabled = false;
@@ -57,7 +55,6 @@ public class CameraSwitching : MonoBehaviour
             cameraThirdPersonRacer.enabled = false;
             cameraTop.enabled = false;
         }
-
         if (Input.GetKey(KeyCode.Alpha4))
         {
             cameraRacer.enabled = false;
@@ -75,5 +72,6 @@ public class CameraSwitching : MonoBehaviour
             cameraThirdPersonRacer.enabled = false;
             cameraTop.enabled = true;
         }
+
     }
 }
