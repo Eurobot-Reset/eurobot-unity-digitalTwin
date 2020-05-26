@@ -15,7 +15,7 @@ public class UI_Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScoreText = GameObject.Find("Text_Score").GetComponent<Text>();
+        
         GameOverPanel.SetActive(false);
     }
 
@@ -30,8 +30,9 @@ public class UI_Timer : MonoBehaviour
         {
             t = 0;
             GameOverPanel.SetActive(true);
-            Text TotalScoreText = GameObject.Find("Text_Total_Sore").GetComponent<Text>();
-            TotalScoreText.text = "Total "+ ScoreText.text;
+            ScoreText = GameObject.Find("Text_Score").GetComponent<Text>(); // added
+            //Text TotalScoreText = GameObject.Find("Text_Total_Sore").GetComponent<Text>();
+            TotalScoreText.text = "Total score: "+ ScoreText.text;
         };
 
 

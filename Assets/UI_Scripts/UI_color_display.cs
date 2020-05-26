@@ -20,7 +20,7 @@ public class UI_color_display : MonoBehaviour
     private Color my_blue = new Color(97 / 255f, 185 / 255f, 217 / 255f);
     private Color my_yellow = new Color(236 / 255f, 248 / 255f, 65 / 255f);
     // Start is called before the first frame update
-    void OnEnable()
+ /*   void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -31,13 +31,23 @@ public class UI_color_display : MonoBehaviour
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    */
+    void Update ()
     {
-        Debug.Log("OnSceneLoaded: " + scene.name);
-        racer = GameMode.robot[0];
-        fatboy = GameMode.robot[1];
-        racer_y = GameMode.isYellowSide[0];
-        fatboy_y = GameMode.isYellowSide[1];
-
+        //Debug.Log("OnSceneLoaded: " + scene.name);
+        //racer = GameMode.robot[0];
+        //fatboy = GameMode.robot[1];
+        //racer_y = GameMode.isYellowSide[0];
+        //fatboy_y = GameMode.isYellowSide[1];
+        if (PlayerPrefs.GetString("Robot") == "Racer") racer = true;
+        else racer = false;
+        if (PlayerPrefs.GetString("Robot") == "Fatboy") fatboy = true;
+        else fatboy = false;
+        if(PlayerPrefs.GetString("Racer_color") == "Yellow") racer_y = true;
+        else racer_y = false;
+        if (PlayerPrefs.GetString("Fatboy_color") == "Yellow") fatboy_y = true;
+        else fatboy_y = false;
+        
         if (racer) // если Racer выбран, то выводим его цвет
         {
             if (racer_y)
@@ -45,7 +55,7 @@ public class UI_color_display : MonoBehaviour
             else
                 Text_Side.text = "Racer side: <color=blue>blue</color>";
 
-            if (fatboy) // если Fatboy тоже  выбран (например Strategy mode), то выводим и его цвет
+            if (GameMode.strategyMode|GameMode.Game_2_active) // если Fatboy тоже  выбран (например Strategy mode), то выводим и его цвет
             {
                 if (fatboy_y)
                     y_string = "Fatboy side: <color=yellow>yellow</color>";
