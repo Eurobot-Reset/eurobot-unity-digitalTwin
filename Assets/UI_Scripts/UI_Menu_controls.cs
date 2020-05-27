@@ -20,6 +20,9 @@ public class UI_Menu_controls : MonoBehaviour
             {
                 GameMode.isYellowSide[0] = true;
                 Score_calc.racer_color_is_yellow = true;
+            } else {
+                GameMode.isYellowSide[0] = false;
+                Score_calc.racer_color_is_yellow = false;
             }
         } else {
             Score_calc.fatboy = true;
@@ -29,6 +32,9 @@ public class UI_Menu_controls : MonoBehaviour
             {
                 GameMode.isYellowSide[1] = true;
                 Score_calc.fatboy_color_is_yellow = true;
+            } else {
+                GameMode.isYellowSide[1] = false;
+                Score_calc.fatboy_color_is_yellow = false;
             }
         }
 
