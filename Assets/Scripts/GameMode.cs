@@ -14,6 +14,10 @@ public class GameMode : MonoBehaviour
     //Strategy game mode
     public static bool strategyMode = false;
 
+    //проверка удалить потом
+    public bool yell_r;
+    public bool yell_f;
+
     private GameObject racer;
     private GameObject fat;
 
@@ -58,17 +62,21 @@ public class GameMode : MonoBehaviour
             racer.transform.position = new Vector3(11.5f,7.3f,67.8f);
             // Rotation
             racer.transform.eulerAngles = new Vector3(0, 60f, 0);
+            yell_r = true; // delete
         } else {
             racer.transform.position = new Vector3(287.6f,7.3f,66.9f);
             racer.transform.eulerAngles = new Vector3(0, 120f, 0);
+            yell_r = false;
         }
 
         if(isYellowSide[1]) {
             fat.transform.position = new Vector3(29.3f,18.5f,92.3f);
             fat.transform.eulerAngles = new Vector3(0, -150f, 0);
+            yell_f = true;
         } else {
             fat.transform.position = new Vector3(270.1f,18.5f,93.1f);
             fat.transform.eulerAngles = new Vector3(0, 150f, 0);
+            yell_f = false;
         }
 
         restart = false;

@@ -29,17 +29,17 @@ public class UI_color_display : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    */
+*/
+ //   void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+ 
     void Update ()
     {
-        //Debug.Log("OnSceneLoaded: " + scene.name);
-        //racer = GameMode.robot[0];
-        //fatboy = GameMode.robot[1];
-        //racer_y = GameMode.isYellowSide[0];
-        //fatboy_y = GameMode.isYellowSide[1];
-
+       /* Debug.Log("OnSceneLoaded: " + scene.name);
+        racer = GameMode.robot[0];
+        fatboy = GameMode.robot[1];
+        racer_y = GameMode.isYellowSide[0];
+        fatboy_y = GameMode.isYellowSide[1];
+*/
         if (PlayerPrefs.GetString("Robot") == "Racer") racer = true;
         else racer = false;
         if (PlayerPrefs.GetString("Robot") == "Fatboy") fatboy = true;
@@ -49,7 +49,7 @@ public class UI_color_display : MonoBehaviour
         if (PlayerPrefs.GetString("Fatboy_color") == "Yellow") fatboy_y = true;
         else fatboy_y = false;
         
-        if (fatboy) // если Fatboy выбран, то выводим его цвет
+        if (GameMode.strategyMode|fatboy) // если Fatboy выбран, то выводим его цвет
         {
             if (fatboy_y)
                 Text_Side.text = "Fatboy side: <color=yellow>yellow</color>";
