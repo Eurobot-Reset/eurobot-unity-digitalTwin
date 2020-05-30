@@ -2985,13 +2985,13 @@ GameObject:
   m_Component:
   - component: {fileID: 233208871}
   - component: {fileID: 233208872}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_cup_taker_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &233208871
 Transform:
   m_ObjectHideFlags: 0
@@ -3743,7 +3743,7 @@ GameObject:
   - component: {fileID: 305997637}
   - component: {fileID: 305997639}
   - component: {fileID: 305997638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4984,7 +4984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383576502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shell Actuator:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7954,7 +7954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 552870642}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shell Actuator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15793,6 +15793,65 @@ Transform:
   m_Father: {fileID: 7760693684087026284}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1182462314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182462315}
+  - component: {fileID: 1182462316}
+  - component: {fileID: 1182462317}
+  m_Layer: 11
+  m_Name: mesh_cup_taker_R_Box_Col
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1182462315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182462314}
+  m_LocalRotation: {x: -0, y: 0.23023914, z: -0, w: 0.97313416}
+  m_LocalPosition: {x: -0.02515, y: -0.01, z: 0.01358}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 1649691628}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 26.622002, z: 0}
+--- !u!65 &1182462316
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182462314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0005, y: 0.001, z: 0.001}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1182462317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182462314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b56f87a70e745646b751508fadbee47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shellActuator: {fileID: 0}
+  sideActuator: 0
 --- !u!1 &1183730243
 GameObject:
   m_ObjectHideFlags: 0
@@ -22227,7 +22286,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1649691628}
-  m_Layer: 0
+  - component: {fileID: 1649691629}
+  m_Layer: 11
   m_Name: cups_taker_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22247,9 +22307,29 @@ Transform:
   m_Children:
   - {fileID: 383576502}
   - {fileID: 233208871}
+  - {fileID: 1182462315}
   m_Father: {fileID: 5676919646761888952}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 1.125, z: 0}
+--- !u!95 &1649691629
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649691627}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b202443bd0602146b83d3c4d3886868, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1660140760
 GameObject:
   m_ObjectHideFlags: 0
@@ -26746,6 +26826,65 @@ Transform:
   m_Father: {fileID: 1030540193}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1937046642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1937046643}
+  - component: {fileID: 1937046645}
+  - component: {fileID: 1937046644}
+  m_Layer: 11
+  m_Name: mesh_cup_taker_L_Box_Col
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1937046643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937046642}
+  m_LocalRotation: {x: -0, y: 0.18528181, z: -0, w: 0.98268545}
+  m_LocalPosition: {x: -0.0273, y: -0.01, z: 0.0063}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 8313950485367081143}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 21.355001, z: 0}
+--- !u!114 &1937046644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937046642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b56f87a70e745646b751508fadbee47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shellActuator: {fileID: 0}
+  sideActuator: 0
+--- !u!65 &1937046645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937046642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0005, y: 0.001, z: 0.001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1937172291
 GameObject:
   m_ObjectHideFlags: 0
@@ -27724,13 +27863,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2036097125}
   - component: {fileID: 2036097126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh_cup_taker_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2036097125
 Transform:
   m_ObjectHideFlags: 0
@@ -53425,7 +53564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7237064438469745501}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shell Actuator:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64527,7 +64666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4251708564204059549}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shell Actuator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71288,7 +71427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8313950485367081143}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cups_taker_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71986,7 +72125,7 @@ GameObject:
   - component: {fileID: 8764104465505603559}
   - component: {fileID: 2766492303197192762}
   - component: {fileID: 5533110967990882240}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100906,6 +101045,7 @@ Transform:
   m_Children:
   - {fileID: 7237064438469745501}
   - {fileID: 2036097125}
+  - {fileID: 1937046643}
   m_Father: {fileID: 5676919646761888952}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 114.06801, z: 0}
