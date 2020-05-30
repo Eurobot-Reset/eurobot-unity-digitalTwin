@@ -14,12 +14,17 @@ public class GameMode : MonoBehaviour
     //Strategy game mode
     public static bool strategyMode = false;
 
+
+    //lighthouse.transform.position = new Vector3(22.09f, 9.28f, -10f);
+    //lighthouse.transform.position = new Vector3(277.54f, 9.28f, -10f);
+
     //проверка удалить потом
     public bool yell_r;
     public bool yell_f;
 
     private GameObject racer;
     private GameObject fat;
+    private GameObject lighthouse;
 
     // Load scene event
     void OnEnable()
@@ -41,6 +46,18 @@ public class GameMode : MonoBehaviour
     {
         fat = GameObject.Find("FatBoy");
         racer = GameObject.Find("RobotRacer");
+
+        //----lighthouse----
+        lighthouse = GameObject.Find("Light_House");
+        lighthouse.transform.eulerAngles = new Vector3(0, 90f, 0);
+
+        //Yellow position
+        //lighthouse.transform.position = new Vector3(22.09f, 9.28f, -10f);
+
+        //Blue position
+        //lighthouse.transform.position = new Vector3(277.54f, 9.28f, -10f);
+        //------------------
+
         Time.timeScale = 1;
         
         if(!strategyMode) {
