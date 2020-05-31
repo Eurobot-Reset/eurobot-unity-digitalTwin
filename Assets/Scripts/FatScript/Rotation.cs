@@ -59,6 +59,10 @@ public class Rotation : MonoBehaviour
         {           
             gripper.transform.RotateAround(axis.transform.position, axis.transform.right, angleSpeed * Time.deltaTime);            
         }
+
+        if (Input.GetKeyDown(KeyCode.Slash))
+            FatboyFlag.fatboy_flag = true;
+
     }
 
     public void GripperTake(Collider gripperCollider, string nameObject)

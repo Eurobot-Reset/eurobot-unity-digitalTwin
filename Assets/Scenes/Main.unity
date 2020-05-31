@@ -34596,10 +34596,15 @@ MonoBehaviour:
   WindsocksText_fatboy: {fileID: 1872177827}
   LighthouseText_fatboy: {fileID: 1367282078}
   side_color: 
-  mooring_score: 0
+  lighthouse_score: 0
   insideNorth: 0
   insideSouth: 0
-  lighthouse_score: 0
+  mooring_score: 0
+  side_color_2: 
+  lighthouse_score_2: 0
+  insideNorth_2: 0
+  insideSouth_2: 0
+  mooring_score_2: 0
 --- !u!1 &2079850788
 GameObject:
   m_ObjectHideFlags: 0
