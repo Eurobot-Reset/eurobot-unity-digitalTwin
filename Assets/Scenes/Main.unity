@@ -34585,6 +34585,16 @@ MonoBehaviour:
   GreenCupsText: {fileID: 390533968}
   WindsocksText: {fileID: 890332965}
   LighthouseText: {fileID: 1784727390}
+  ScoreText_racer: {fileID: 1764752937}
+  RedCupsText_racer: {fileID: 394996104}
+  GreenCupsText_racer: {fileID: 618137739}
+  WindsocksText_racer: {fileID: 1820333940}
+  LighthouseText_racer: {fileID: 344680806}
+  ScoreText_fatboy: {fileID: 204581835}
+  RedCupsText_fatboy: {fileID: 1099882013}
+  GreenCupsText_fatboy: {fileID: 949730260}
+  WindsocksText_fatboy: {fileID: 1872177827}
+  LighthouseText_fatboy: {fileID: 1367282078}
   side_color: 
   mooring_score: 0
   insideNorth: 0
