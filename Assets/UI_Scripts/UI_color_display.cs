@@ -49,14 +49,14 @@ public class UI_color_display : MonoBehaviour
         if (PlayerPrefs.GetString("Fatboy_color") == "Yellow") fatboy_y = true;
         else fatboy_y = false;
         
-        if (GameMode.strategyMode|fatboy) // если Fatboy выбран, то выводим его цвет
+        if (GameMode.Game_2_active|fatboy) // если Fatboy выбран, то выводим его цвет
         {
             if (fatboy_y)
                 Text_Side.text = "Fatboy side: <color=yellow>yellow</color>";
             else
                 Text_Side.text = "Fatboy side: <color=blue>blue</color>";
 
-            if (GameMode.strategyMode|GameMode.Game_2_active) // если Racer тоже  выбран (например Strategy mode), то выводим и его цвет
+            if (GameMode.Game_2_active) // если Racer тоже  выбран (например Strategy mode), то выводим и его цвет
             {
                 if (racer_y)
                     y_string = "Racer side: <color=yellow>yellow</color>";
