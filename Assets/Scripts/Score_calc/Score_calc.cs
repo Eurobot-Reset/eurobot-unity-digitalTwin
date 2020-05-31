@@ -15,6 +15,7 @@ public class Score_calc : MonoBehaviour
     public Text RedCupsText;
     public Text GreenCupsText;
     public Text WindsocksText;
+    public Text LighthouseText;
     
     public string side_color;
     //public bool racer = GameMode.robot[0];
@@ -25,6 +26,9 @@ public class Score_calc : MonoBehaviour
     public static bool fatboy;
     public static bool racer_color_is_yellow;
     public static bool fatboy_color_is_yellow;
+
+    private GameObject lighthouse_yellow;
+    private GameObject lighthouse_blue;
 
     private GameObject SmallPort;
     private GameObject SmallPortGreen;
@@ -51,7 +55,8 @@ public class Score_calc : MonoBehaviour
     public int insideNorth;
     public int insideSouth;
     private string weathervaneStatus;
-    
+
+    public int lighthouse_score = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -60,6 +65,8 @@ public class Score_calc : MonoBehaviour
        // RedCupsText = GameObject.Find("Text_Red_Cups").GetComponent<Text>();
        // GreenCupsText = GameObject.Find("Text_Green_Cups").GetComponent<Text>();
        // WindsocksText = GameObject.Find("Text_windsock").GetComponent<Text>();
+        lighthouse_yellow = GameObject.Find("Light_House");
+        lighthouse_blue = GameObject.Find("Light_House1");
 
         if (racer)
         {
@@ -241,13 +248,29 @@ public class Score_calc : MonoBehaviour
             
         }
 
+        //Lighthouse:
+        if (lighthouse_yellow != null)
+        {
+            if (lighthouse_yellow.GetComponent<LightHouseScript>().lightHouseIsActivated)
+            {
+                lighthouse_score = 15;
+                LighthouseText.text = "1";
+            }
+            else LighthouseText.text = "0";
+        }
+
+        if (lighthouse_blue != null)
+        {
+            if (lighthouse_blue.GetComponent<LightHouseScript1>().lightHouseIsActivated)
+            {
+                lighthouse_score = 15;
+                LighthouseText.text = "1";
+            }
+            else LighthouseText.text = "0";
+        }
 
 
-
-
-
-
-        Score = (SmallPortGreenCups + SmallPortRedCups) * 2 + SmallPortPairCups * 2 + (SmallPortCups - SmallPortGreenCups - SmallPortRedCups) * 1 + (BigPortGreenCups + BigPortRedCups) * 2 + BigPortPairCups * 2 + (BigPortCups - BigPortGreenCups - BigPortRedCups) * 1 + windsocks_score + mooring_score;
+        Score = (SmallPortGreenCups + SmallPortRedCups) * 2 + SmallPortPairCups * 2 + (SmallPortCups - SmallPortGreenCups - SmallPortRedCups) * 1 + (BigPortGreenCups + BigPortRedCups) * 2 + BigPortPairCups * 2 + (BigPortCups - BigPortGreenCups - BigPortRedCups) * 1 + windsocks_score + mooring_score + lighthouse_score;
         ScoreText.text = "Score: " + Score.ToString();
 
         RedCupsText.text = (SmallPortRedCups + BigPortRedCups).ToString();

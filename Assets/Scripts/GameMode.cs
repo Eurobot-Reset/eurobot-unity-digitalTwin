@@ -24,7 +24,8 @@ public class GameMode : MonoBehaviour
 
     private GameObject racer;
     private GameObject fat;
-    private GameObject lighthouse;
+    private GameObject lighthouse_yellow;
+    private GameObject lighthouse_blue;
 
     // Load scene event
     void OnEnable()
@@ -48,14 +49,16 @@ public class GameMode : MonoBehaviour
         racer = GameObject.Find("RobotRacer");
 
         //----lighthouse----
-        lighthouse = GameObject.Find("Light_House");
-        lighthouse.transform.eulerAngles = new Vector3(0, 90f, 0);
+        lighthouse_yellow = GameObject.Find("Light_House");
+        lighthouse_blue = GameObject.Find("Light_House1");
+        lighthouse_yellow.transform.eulerAngles = new Vector3(0, 90f, 0);
+        lighthouse_blue.transform.eulerAngles = new Vector3(0, 90f, 0);
 
         //Yellow position
-        //lighthouse.transform.position = new Vector3(22.09f, 9.28f, -10f);
+        lighthouse_yellow.transform.position = new Vector3(22.09f, 9.28f, -10f);
 
         //Blue position
-        //lighthouse.transform.position = new Vector3(277.54f, 9.28f, -10f);
+        lighthouse_blue.transform.position = new Vector3(277.54f, 9.28f, -10f);
         //------------------
 
         Time.timeScale = 1;
@@ -66,6 +69,50 @@ public class GameMode : MonoBehaviour
             else racer.SetActive(false);
             if (robot[1]) fat.SetActive(true);
             else fat.SetActive(false);
+            if ((robot[0]) && (robot[1]))
+            {
+                if ((isYellowSide[0]) && (isYellowSide[1]))
+                {
+                    lighthouse_yellow.SetActive(true);
+                    lighthouse_blue.SetActive(false);
+                }
+                else if ((!(isYellowSide[0])) && (!(isYellowSide[1])))
+                {
+                    lighthouse_yellow.SetActive(false);
+                    lighthouse_blue.SetActive(true);
+                }
+                else
+                {
+                    lighthouse_yellow.SetActive(true);
+                    lighthouse_blue.SetActive(true);
+                }
+            }
+            else if (robot[0])
+            {
+                if (isYellowSide[0])
+                {
+                    lighthouse_yellow.SetActive(true);
+                    lighthouse_blue.SetActive(false);
+                }
+                else
+                {
+                    lighthouse_yellow.SetActive(false);
+                    lighthouse_blue.SetActive(true);
+                }
+            }
+            else if (robot[1])
+            {
+                if (isYellowSide[1])
+                {
+                    lighthouse_yellow.SetActive(true);
+                    lighthouse_blue.SetActive(false);
+                }
+                else
+                {
+                    lighthouse_yellow.SetActive(false);
+                    lighthouse_blue.SetActive(true);
+                }
+            }
         } else {
             //Init strategy game mode
             robot[0] = true;

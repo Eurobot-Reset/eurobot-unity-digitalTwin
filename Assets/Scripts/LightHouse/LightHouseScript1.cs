@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightHouseScript : MonoBehaviour
+public class LightHouseScript1 : MonoBehaviour
 {
     private GameObject lift_1;
     private GameObject lift_2;
@@ -17,7 +17,7 @@ public class LightHouseScript : MonoBehaviour
     private float lightgouseSpeed_2 = 8f;
     private float Speed_rotating_Cat = 180f;
 
-    private float[] Y_up = new float[] {28, 50f};
+    private float[] Y_up = new float[] { 28, 50f };
 
     public static bool activate_light_house = false;
     public bool lightHouseIsActivated = false;
@@ -25,13 +25,13 @@ public class LightHouseScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lift_1 = GameObject.Find("LIFT1");
-        lift_2 = GameObject.Find("LIFT2");
-        cat_rot = GameObject.Find("Cat");
+        lift_1 = GameObject.Find("LIFT1_1");
+        lift_2 = GameObject.Find("LIFT2_1");
+        cat_rot = GameObject.Find("Cat_1");
 
-        button_right = GameObject.Find("ColButRight");
-        button_left = GameObject.Find("ColButLeft");
-        button_front = GameObject.Find("ColButFront");
+        button_right = GameObject.Find("ColButRight_1");
+        button_left = GameObject.Find("ColButLeft_1");
+        button_front = GameObject.Find("ColButFront_1");
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class LightHouseScript : MonoBehaviour
             rase_lighthouse();
         }
     }
-    void rase_lighthouse ()
+    void rase_lighthouse()
     {
         if (lift_1.transform.position.y < Y_up[0])
         {
