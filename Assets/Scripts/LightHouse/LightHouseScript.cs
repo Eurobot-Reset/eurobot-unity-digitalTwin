@@ -32,6 +32,8 @@ public class LightHouseScript : MonoBehaviour
         button_right = GameObject.Find("ColButRight");
         button_left = GameObject.Find("ColButLeft");
         button_front = GameObject.Find("ColButFront");
+
+        activate_light_house = false;
     }
 
     // Update is called once per frame
