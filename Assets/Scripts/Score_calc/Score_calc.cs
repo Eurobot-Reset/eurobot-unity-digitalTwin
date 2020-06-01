@@ -65,6 +65,9 @@ public class Score_calc : MonoBehaviour
     public int mooring_score = 0;
     private int Score;
 
+    private bool fatboy_flag_failed = false;
+    private int fatboy_flag_score = 0;
+
     // 2
     public string side_color_2;
 
@@ -93,6 +96,13 @@ public class Score_calc : MonoBehaviour
     public int mooring_score_2 = 0;
     private int Score_2;
 
+    private bool fatboy_flag_failed_2 = false;
+    private int fatboy_flag_score_2 = 0;
+
+    //timer
+    public float t;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +127,8 @@ public class Score_calc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        t = UI_Timer.t;
+
         OneSideUpdate();
         if (OneSideOnly) ShowTextOneSide();
         else { SecondSideUpdate(); ShowTextTwoSides(); }
@@ -296,8 +308,27 @@ public class Score_calc : MonoBehaviour
             if (lighthouse_blue.GetComponent<LightHouseScript1>().lightHouseIsActivated)
                 if (side_color == "Blue") lighthouse_score = 15;
 
+        //Fatboy flag:
+        if ((racer) && (fatboy))
+        {
+            if (((racer_color_is_yellow) && (fatboy_color_is_yellow)) || ((!(racer_color_is_yellow)) && (!(fatboy_color_is_yellow))))
+            {
+                if ((t > 5.0f) && (FatboyFlag.fatboy_flag))
+                    fatboy_flag_failed = true;
+                if ((t < 5.0f) && (FatboyFlag.fatboy_flag) && (!(fatboy_flag_failed)))
+                    fatboy_flag_score = 5;
+            }
+        }
+        else
+        {
+            if ((t > 5.0f) && (FatboyFlag.fatboy_flag))
+                fatboy_flag_failed = true;
+            if ((t < 5.0f) && (FatboyFlag.fatboy_flag) && (!(fatboy_flag_failed)))
+                fatboy_flag_score = 5;
+        }
+
         // Sum score calculation
-        Score = (SmallPortGreenCups + SmallPortRedCups) * 2 + SmallPortPairCups * 2 + (SmallPortCups - SmallPortGreenCups - SmallPortRedCups) * 1 + (BigPortGreenCups + BigPortRedCups) * 2 + BigPortPairCups * 2 + (BigPortCups - BigPortGreenCups - BigPortRedCups) * 1 + windsocks_score + mooring_score + lighthouse_score;
+        Score = (SmallPortGreenCups + SmallPortRedCups) * 2 + SmallPortPairCups * 2 + (SmallPortCups - SmallPortGreenCups - SmallPortRedCups) * 1 + (BigPortGreenCups + BigPortRedCups) * 2 + BigPortPairCups * 2 + (BigPortCups - BigPortGreenCups - BigPortRedCups) * 1 + windsocks_score + mooring_score + lighthouse_score + fatboy_flag_score;
         
     }
 
@@ -393,8 +424,14 @@ public class Score_calc : MonoBehaviour
             if (lighthouse_blue.GetComponent<LightHouseScript1>().lightHouseIsActivated)
                 if (side_color_2 == "Blue") lighthouse_score_2 = 15;
 
+        //Fatboy flag:
+        if ((t > 5.0f) && (FatboyFlag.fatboy_flag))
+            fatboy_flag_failed_2 = true;
+        if ((t < 5.0f) && (FatboyFlag.fatboy_flag) && (!(fatboy_flag_failed)))
+            fatboy_flag_score_2 = 5;
+
         // Sum score calculation
-        Score_2 = (SmallPortGreenCups_2 + SmallPortRedCups_2) * 2 + SmallPortPairCups_2 * 2 + (SmallPortCups_2 - SmallPortGreenCups_2 - SmallPortRedCups_2) * 1 + (BigPortGreenCups_2 + BigPortRedCups_2) * 2 + BigPortPairCups_2 * 2 + (BigPortCups_2 - BigPortGreenCups_2 - BigPortRedCups_2) * 1 + windsocks_score_2 + mooring_score_2 + lighthouse_score_2;
+        Score_2 = (SmallPortGreenCups_2 + SmallPortRedCups_2) * 2 + SmallPortPairCups_2 * 2 + (SmallPortCups_2 - SmallPortGreenCups_2 - SmallPortRedCups_2) * 1 + (BigPortGreenCups_2 + BigPortRedCups_2) * 2 + BigPortPairCups_2 * 2 + (BigPortCups_2 - BigPortGreenCups_2 - BigPortRedCups_2) * 1 + windsocks_score_2 + mooring_score_2 + lighthouse_score_2 + fatboy_flag_score_2;
     }
 
     void ShowTextOneSide()
