@@ -29,6 +29,9 @@ public class Score_calc : MonoBehaviour
     public static bool racer_color_is_yellow;
     public static bool fatboy_color_is_yellow;
 
+    public Text total_score_racer; // gor game over score racer
+    public Text total_score_fatboy; // gor game over score fatboy  
+
     private GameObject lighthouse_yellow;
     private GameObject lighthouse_blue;
 
@@ -491,6 +494,7 @@ public class Score_calc : MonoBehaviour
         GreenCupsText_racer.text = (SmallPortGreenCups + BigPortGreenCups).ToString();
         ScoreText_racer.text = "Score: " + Score.ToString();
 
+
         if (windsocks_score_2 == 15)
             WindsocksText_fatboy.text = "2";
         else if (windsocks_score_2 == 5)
@@ -504,5 +508,8 @@ public class Score_calc : MonoBehaviour
         RedCupsText_fatboy.text = (SmallPortRedCups_2 + BigPortRedCups_2).ToString();
         GreenCupsText_fatboy.text = (SmallPortGreenCups_2 + BigPortGreenCups_2).ToString();
         ScoreText_fatboy.text = "Score: " + Score_2.ToString();
+
+        total_score_racer.text = "Racer score: " + Score.ToString(); ; // вывод на геймовер экран
+        total_score_fatboy.text = "Fatboy score: " + Score_2.ToString(); // вывод на гйем овер экран
     }
 }
