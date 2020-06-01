@@ -93507,6 +93507,7 @@ GameObject:
   - component: {fileID: 6766900406854942857}
   - component: {fileID: 6766900406854942851}
   - component: {fileID: 6766900406854942858}
+  - component: {fileID: 6766900406854942850}
   m_Layer: 8
   m_Name: RobotRacer
   m_TagString: Untagged
@@ -93544,6 +93545,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &6766900406854942850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766900406854942847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc56cb2acd3424efb393f2d3f5f2676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: 
+  laserScanReader: {fileID: 0}
+  FrameId: Unity
 --- !u!114 &6766900406854942851
 MonoBehaviour:
   m_ObjectHideFlags: 0
