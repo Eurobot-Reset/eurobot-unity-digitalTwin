@@ -29,6 +29,7 @@ public class Score_calc : MonoBehaviour
     public static bool racer_color_is_yellow;
     public static bool fatboy_color_is_yellow;
 
+    public Text total_score;
     public Text total_score_racer; // gor game over score racer
     public Text total_score_fatboy; // gor game over score fatboy  
 
@@ -109,6 +110,8 @@ public class Score_calc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OneSideOnly = true;
+
         lighthouse_yellow = GameObject.Find("Light_House");
         lighthouse_blue = GameObject.Find("Light_House1");
 
@@ -458,6 +461,9 @@ public class Score_calc : MonoBehaviour
             GreenCupsText_fatboy.text = (SmallPortGreenCups + BigPortGreenCups).ToString();
             ScoreText_racer.text = "Score: " + Score.ToString();
             ScoreText_fatboy.text = "Score: " + Score.ToString();
+
+            total_score_racer.text = "Racer score: " + Score.ToString(); ; // вывод на геймовер экран
+            total_score_fatboy.text = "Fatboy score: " + Score.ToString(); // вывод на гйем овер экран
         }
         else
         {
@@ -474,6 +480,7 @@ public class Score_calc : MonoBehaviour
             RedCupsText.text = (SmallPortRedCups + BigPortRedCups).ToString();
             GreenCupsText.text = (SmallPortGreenCups + BigPortGreenCups).ToString();
             ScoreText.text = "Score: " + Score.ToString();
+            total_score.text = "Total score: " + Score.ToString();
         }
     }
 

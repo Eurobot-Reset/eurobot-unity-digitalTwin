@@ -32,7 +32,7 @@ public class UI_Timer : MonoBehaviour
             GameOverPanel.SetActive(true);
             //ScoreText = GameObject.Find("Text_Score").GetComponent<Text>(); // added
             //Text TotalScoreText = GameObject.Find("Text_Total_Sore").GetComponent<Text>();
-            TotalScoreText.text = "Total score: "+ ScoreText.text;
+            //TotalScoreText.text = "Total score: "+ ScoreText.text;
         };
 
 

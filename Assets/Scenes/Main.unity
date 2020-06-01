@@ -34595,6 +34595,9 @@ MonoBehaviour:
   GreenCupsText_fatboy: {fileID: 949730260}
   WindsocksText_fatboy: {fileID: 1872177827}
   LighthouseText_fatboy: {fileID: 1367282078}
+  total_score: {fileID: 1667915738}
+  total_score_racer: {fileID: 457074775}
+  total_score_fatboy: {fileID: 1886863094}
   side_color: 
   lighthouse_score: 0
   insideNorth: 0
@@ -34605,6 +34608,7 @@ MonoBehaviour:
   insideNorth_2: 0
   insideSouth_2: 0
   mooring_score_2: 0
+  t: 0
 --- !u!1 &2079850788
 GameObject:
   m_ObjectHideFlags: 0
