@@ -93948,6 +93948,7 @@ MonoBehaviour:
   Suck_3_Right: {fileID: 8557319044946657100}
   yellow: {fileID: 8291272948121497963, guid: 47792cb4463183b4ea1cdb1779bb8707, type: 3}
   white: {fileID: -7986855199053626473, guid: 05684df44278f56429aae71229c9ee91, type: 3}
+  customMsgSubscriber: {fileID: 6766900406854942850}
 --- !u!114 &6766900406854942853
 MonoBehaviour:
   m_ObjectHideFlags: 0

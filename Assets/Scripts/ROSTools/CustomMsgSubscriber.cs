@@ -42,6 +42,7 @@ namespace RosSharp.RosBridgeClient
             if (isMessageReceived)
                 ProcessMessage();
         }
+        
         private void ProcessMessage()
         {
             isMessageReceived = false;
