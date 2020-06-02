@@ -64,8 +64,8 @@ namespace RosSharp.RosBridgeClient
                 angle_max       = laserScanReader.angle_max,
                 angle_increment = laserScanReader.angle_increment,
                 time_increment  = laserScanReader.time_increment,
-                range_min       = laserScanReader.range_min,
-                range_max       = laserScanReader.range_max,
+                range_min       = laserScanReader.range_min/100,
+                range_max       = laserScanReader.range_max/100,
                 ranges          = laserScanReader.ranges,      
                 intensities     = laserScanReader.intensities
             };

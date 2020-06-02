@@ -2929,6 +2929,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179882772}
   m_Mesh: {fileID: -7157094551702730884, guid: 04346b9ff9b88874b8d8753dcee8a26c, type: 3}
+--- !u!1 &186558810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 186558811}
+  m_Layer: 8
+  m_Name: AxisFixer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &186558811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186558810}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5676919646761888952}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &187187520
 GameObject:
   m_ObjectHideFlags: 0
@@ -45906,7 +45936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9122a7d6f298dff83bbd9d9308e09da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  systemError: 0.04
+  systemError: 0.01
   angle: 270
   angularResolution: 0.5
   hasNoise: 1
@@ -45917,8 +45947,8 @@ MonoBehaviour:
   angle_increment: 0.0046
   time_increment: 0
   scan_time: 0
-  range_min: 10
-  range_max: 350
+  range_min: 0.1
+  range_max: 3.5
   showDebugRay: 0
   color: {r: 0, g: 1, b: 0.3243475, a: 0.7921569}
   ranges: []
@@ -45949,9 +45979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc56cb2acd3424efb393f2d3f5f2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /LIDAR_uu
+  Topic: /secondary_robot/scan
   laserScanReader: {fileID: 1164651722018730396}
-  FrameId: Unity
+  FrameId: /secondary_robot
 --- !u!114 &1164651722018730399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84325,6 +84355,7 @@ Transform:
   - {fileID: 8313950485367081143}
   - {fileID: 1649691628}
   - {fileID: 1836807162}
+  - {fileID: 186558811}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 150, z: 0}
@@ -93825,6 +93856,7 @@ GameObject:
   - component: {fileID: 6766900406854942857}
   - component: {fileID: 6766900406854942851}
   - component: {fileID: 6766900406854942858}
+  - component: {fileID: 6766900406854942850}
   m_Layer: 8
   m_Name: RobotRacer
   m_TagString: Untagged
@@ -93854,14 +93886,29 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6766900406854942847}
   serializedVersion: 2
-  m_Mass: 20
-  m_Drag: 2
-  m_AngularDrag: 1
+  m_Mass: 2
+  m_Drag: 3
+  m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &6766900406854942850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766900406854942847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13958701f3e16e52b96157bc8fce88e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /main_robot/stm/command
+  TimeStep: 0
+  data: 
 --- !u!114 &6766900406854942851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93948,7 +93995,7 @@ MonoBehaviour:
   speed: 1000
   torque: 100
   rotationSpeed: 5
-  gravity: -98.1
+  gravity: -9.8
 --- !u!114 &6766900406854942856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110780,13 +110827,13 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8688325007349866155}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f0c071e19eb04244f9c479ff3fc2ebe6, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_Mesh: {fileID: 8604045607132181640, guid: 8adec61cb0c34b344b215fd228936754, type: 3}
 --- !u!114 &8688325007349866158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110802,7 +110849,7 @@ MonoBehaviour:
   speed: 1000
   torque: 100
   rotationSpeed: 6
-  gravity: -98.1
+  gravity: -9.8
 --- !u!54 &8688325007349866159
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110811,9 +110858,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8688325007349866155}
   serializedVersion: 2
-  m_Mass: 20
-  m_Drag: 2
-  m_AngularDrag: 1
+  m_Mass: 2
+  m_Drag: 3
+  m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -110846,7 +110893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /secondary_robot/navigation/cmd_vel
   TimeStep: 0
-  SubscribedTransform: {fileID: 5676919646761888952}
+  SubscribedTransform: {fileID: 186558811}
   linearVelocity: {x: 0, y: 0, z: 0}
   angularVelocity: {x: 0, y: 0, z: 0}
   speedScaleFactor: 100
@@ -110880,7 +110927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /secondary_robot/unity_pose
-  PublishedTransform: {fileID: 5676919646761888952}
+  PublishedTransform: {fileID: 186558811}
   FrameId: Unity
 --- !u!1 &8692879771622751616
 GameObject:
@@ -111881,7 +111928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9122a7d6f298dff83bbd9d9308e09da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  systemError: 0.04
+  systemError: 0.01
   angle: 270
   angularResolution: 0.5
   hasNoise: 1
@@ -111892,9 +111939,9 @@ MonoBehaviour:
   angle_increment: 0.0046
   time_increment: 0
   scan_time: 0
-  range_min: 10
-  range_max: 350
-  showDebugRay: 0
+  range_min: 0.1
+  range_max: 3.5
+  showDebugRay: 1
   color: {r: 1, g: 0.518708, b: 0, a: 0.7372549}
   ranges: []
   intensities: []
@@ -111910,9 +111957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc56cb2acd3424efb393f2d3f5f2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: /LIDAR_Unity
+  Topic: /main_robot/scan
   laserScanReader: {fileID: 8807248415062021571}
-  FrameId: Unity
+  FrameId: /main_robot
 --- !u!114 &8807248415062021573
 MonoBehaviour:
   m_ObjectHideFlags: 0

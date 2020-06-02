@@ -20,51 +20,21 @@ using UnityEngine;
 
 namespace RosSharp.RosBridgeClient
 {
-    public class CustomMsgSubscriber : UnitySubscriber<MessageTypes.Geometry.Twist>
+    public class CustomMsgSubscriber : UnitySubscriber<MessageTypes.Std.String>
     {
-        public Transform SubscribedTransform;
-
-        private float previousRealTime;
-        private float flipper;
-        public Vector3 linearVelocity;
-        public Vector3 angularVelocity;
+        public string data;
         private bool isMessageReceived;
-        Rigidbody rb;
-        public float speedScaleFactor;
-        public float torqueScaleFactor;
 
         protected override void Start()
         {
-            rb = GetComponent<Rigidbody>();
             base.Start();
         }
 
-        protected override void ReceiveMessage(MessageTypes.Geometry.Twist message)
+        protected override void ReceiveMessage(MessageTypes.Std.String message)
         {
-            linearVelocity = ToVector3(message.linear).Ros2Unity();
-            flipper = linearVelocity.y;
-            linearVelocity.y = linearVelocity.z;
-            linearVelocity.z = flipper;
-
-            flipper = linearVelocity.y;
-            linearVelocity.y = -linearVelocity.x;
-            linearVelocity.x = flipper;
-
-            flipper = linearVelocity.y;
-            linearVelocity.y = linearVelocity.z;
-            linearVelocity.z = flipper;
-
-            linearVelocity *= 10;
-
-            angularVelocity = -ToVector3(message.angular).Ros2Unity();
-            // angularVelocity.y = -angularVelocity.y;
-            angularVelocity *= 10;
+            data = message.data;
+            Debug.Log(data);
             isMessageReceived = true;
-        }
-
-        private static Vector3 ToVector3(MessageTypes.Geometry.Vector3 geometryVector3)
-        {
-            return new Vector3((float)geometryVector3.x, (float)geometryVector3.y, (float)geometryVector3.z);
         }
 
         private void Update()
@@ -74,20 +44,6 @@ namespace RosSharp.RosBridgeClient
         }
         private void ProcessMessage()
         {
-            float deltaTime = Time.realtimeSinceStartup - previousRealTime;
-
-            //SubscribedTransform.Translate(linearVelocity * deltaTime);
-            //SubscribedTransform.Rotate(Vector3.forward, angularVelocity.x * deltaTime);
-            //SubscribedTransform.Rotate(Vector3.up, angularVelocity.y * deltaTime);
-            //SubscribedTransform.Rotate(Vector3.left, angularVelocity.z * deltaTime);
-
-            previousRealTime = Time.realtimeSinceStartup;
-
-            Vector3 moveVector = transform.right * linearVelocity.x + transform.forward * linearVelocity.z;
-
-            rb.AddForce(moveVector * speedScaleFactor);
-            rb.AddTorque(transform.up * angularVelocity.y * torqueScaleFactor);
-
             isMessageReceived = false;
         }
     }

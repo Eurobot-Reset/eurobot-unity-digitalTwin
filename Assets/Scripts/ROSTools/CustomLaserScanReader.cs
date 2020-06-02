@@ -61,10 +61,13 @@ namespace RosSharp.RosBridgeClient
 
             scanPeriod = samples / update_rate;
 
+            range_min *= 100;
+            range_max *= 100;
+
             // InvokeRepeating("UpdateStatus", 0.1f, samples/update_rate);   
         }
 
-        /* void Update() 
+        void Update() 
         {
             if (Time.realtimeSinceStartup >= previousScanTime + scanPeriod)
             {
@@ -73,7 +76,7 @@ namespace RosSharp.RosBridgeClient
                 previousScanTime = Time.realtimeSinceStartup;
             
             }
-        }*/
+        }
 
         void UpdateStatus()
         {
@@ -84,11 +87,16 @@ namespace RosSharp.RosBridgeClient
         {
             MeasureDistance();
 
+            error = (hasNoise ? Noise() : 0.0f);
+
             laserScanVisualizers = GetComponents<LaserScanVisualizer>();
             if (laserScanVisualizers != null)
                 foreach (LaserScanVisualizer laserScanVisualizer in laserScanVisualizers)
                     laserScanVisualizer.SetSensorData(gameObject.transform, directions, ranges, range_min, range_max);
 
+            for (int i = 0; i < samples; i++)
+                ranges[i] = ranges[i]/100 + error;
+            
             return ranges;
         }
 
@@ -99,8 +107,6 @@ namespace RosSharp.RosBridgeClient
             ranges = new float[samples];
             intensities = new float[samples];
 
-            error = (hasNoise ? Noise() : 0.0f);
-
             for (int i = 0; i < samples; i++)
             {
                 intensities[i] = 1000;
@@ -108,15 +114,15 @@ namespace RosSharp.RosBridgeClient
                 // rays[i] = new Ray(transform.position, transform.rotation * Quaternion.AngleAxis(angle * 0.5f + (-1 * i * angularResolution), Vector3.up) * Vector3.forward);
                 // directions[i] = Quaternion.Euler(-transform.rotation.eulerAngles) * rays[i].direction;
                 
-                rays[i] = new Ray(transform.position, Quaternion.Euler(new Vector3(0, angle_min - angle_increment * i * 180 / Mathf.PI, 0)) * transform.forward);
+                rays[i] = new Ray(transform.position, Quaternion.Euler(new Vector3(0, angle_max - angle_increment * i * 180 / Mathf.PI, 0)) * transform.forward);
                 directions[i] = Quaternion.Euler(-transform.rotation.eulerAngles) * rays[i].direction;
 
-                ranges[i] = range_max + error;
+                ranges[i] = range_max;
                 
                 raycastHits[i] = new RaycastHit();
                 if (Physics.Raycast(rays[i], out raycastHits[i], range_max))
                     if (raycastHits[i].distance >= range_min && raycastHits[i].distance <= range_max)
-                        ranges[i] = raycastHits[i].distance + error;
+                        ranges[i] = raycastHits[i].distance;
                 
                 if (showDebugRay)
                     Debug.DrawRay(rays[i].origin, rays[i].direction * ranges[i], color);
