@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Networking;
 
-public class ControlRacerRigidBody : MonoBehaviour
+public class ControlRacerRigidBody : NetworkBehaviour
 {
 
     Rigidbody rb;
@@ -23,6 +24,11 @@ public class ControlRacerRigidBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isLocalPlayer)
+        {
+            // exit from update if this is not the local player
+            return;
+        }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) ||  Input.GetKey(KeyCode.A) ||  Input.GetKey(KeyCode.S) ||  Input.GetKey(KeyCode.Q) ||  Input.GetKey(KeyCode.E))
             {Keycontrol();}
     }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Networking;
 
-public class ControlFatBoyRigidBody : MonoBehaviour
+public class ControlFatBoyRigidBody : NetworkBehaviour
 {
 
 
@@ -24,6 +25,11 @@ public class ControlFatBoyRigidBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isLocalPlayer)
+        {
+            // exit from update if this is not the local player
+            return;
+        }
         if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.U) ||  Input.GetKey(KeyCode.I) ||  Input.GetKey(KeyCode.O) ||  Input.GetKey(KeyCode.K) ||  Input.GetKey(KeyCode.L))
             {Keycontrol();}
     }
