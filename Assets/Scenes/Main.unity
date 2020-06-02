@@ -16632,6 +16632,7 @@ GameObject:
   - component: {fileID: 1044339782}
   - component: {fileID: 1044339784}
   - component: {fileID: 1044339783}
+  - component: {fileID: 1044339785}
   m_Layer: 0
   m_Name: Body2 2
   m_TagString: Untagged
@@ -16701,6 +16702,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044339781}
+  m_Mesh: {fileID: 5358915128574053833, guid: 6da3b190377e17d41be73077feab2fde, type: 3}
+--- !u!64 &1044339785
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044339781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: 5358915128574053833, guid: 6da3b190377e17d41be73077feab2fde, type: 3}
 --- !u!1 &1045155865
 GameObject:
@@ -45850,6 +45865,8 @@ GameObject:
   - component: {fileID: 1164651722018730395}
   - component: {fileID: 1164651722018730396}
   - component: {fileID: 1164651722018730397}
+  - component: {fileID: 1164651722018730399}
+  - component: {fileID: 1164651722018730398}
   m_Layer: 0
   m_Name: Body4 5
   m_TagString: Untagged
@@ -45893,16 +45910,16 @@ MonoBehaviour:
   angle: 270
   angularResolution: 0.5
   hasNoise: 1
-  samples: 360
-  update_rate: 0.001
+  samples: 1024
+  update_rate: 10000
   angle_min: 0
-  angle_max: 6.28
-  angle_increment: 0.0174533
+  angle_max: 2.35619
+  angle_increment: 0.0046
   time_increment: 0
   scan_time: 0
   range_min: 10
   range_max: 350
-  showDebugRay: 1
+  showDebugRay: 0
   color: {r: 0, g: 1, b: 0.3243475, a: 0.7921569}
   ranges: []
   intensities: []
@@ -45920,6 +45937,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 5235650535908428509, guid: 6da3b190377e17d41be73077feab2fde,
     type: 3}
+--- !u!114 &1164651722018730398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164651722018730394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc56cb2acd3424efb393f2d3f5f2676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /LIDAR_uu
+  laserScanReader: {fileID: 1164651722018730396}
+  FrameId: Unity
+--- !u!114 &1164651722018730399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164651722018730394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff98778ae051cfd40a6e4effdf851ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsTimeout: 10
+  Serializer: 0
+  protocol: 0
+  RosBridgeServerUrl: ws://127.0.1.1:9090
 --- !u!33 &1166231615998151397
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89266,13 +89314,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164651722018730394}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.92387956, z: 0, w: 0.38268343}
   m_LocalPosition: {x: -0, y: 0.05, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 8867086987882213866}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!23 &6236282438937759912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102599,13 +102647,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8807248415062021569}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.92387956, z: 0, w: 0.38268343}
   m_LocalPosition: {x: -0, y: 0.05, z: -0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 5704989044419034762}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!4 &7798182333858718183
 Transform:
   m_ObjectHideFlags: 0
@@ -111790,10 +111838,10 @@ GameObject:
   - component: {fileID: 5073444221570767829}
   - component: {fileID: 8807248415062021570}
   - component: {fileID: 8807248415062021573}
-  - component: {fileID: 8807248415062021572}
   - component: {fileID: 8807248415062021571}
   - component: {fileID: 8807248415062021574}
   - component: {fileID: 8807248415062021575}
+  - component: {fileID: 8807248415062021572}
   m_Layer: 12
   m_Name: Body4 1
   m_TagString: Untagged
@@ -111838,15 +111886,15 @@ MonoBehaviour:
   angularResolution: 0.5
   hasNoise: 1
   samples: 1024
-  update_rate: 0.001
+  update_rate: 10000
   angle_min: 0
-  angle_max: 6.28
-  angle_increment: 0.0174533
+  angle_max: 2.35619
+  angle_increment: 0.0046
   time_increment: 0
   scan_time: 0
   range_min: 10
   range_max: 350
-  showDebugRay: 1
+  showDebugRay: 0
   color: {r: 1, g: 0.518708, b: 0, a: 0.7372549}
   ranges: []
   intensities: []
@@ -111857,13 +111905,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8807248415062021569}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 938611d5f671cfe4f9be87c66d865ae1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fc56cb2acd3424efb393f2d3f5f2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Topic: 
-  laserScanReader: {fileID: 0}
+  Topic: /LIDAR_Unity
+  laserScanReader: {fileID: 8807248415062021571}
   FrameId: Unity
 --- !u!114 &8807248415062021573
 MonoBehaviour:
@@ -111880,7 +111928,7 @@ MonoBehaviour:
   SecondsTimeout: 10
   Serializer: 0
   protocol: 0
-  RosBridgeServerUrl: ws://192.168.0.1:9090
+  RosBridgeServerUrl: ws://127.0.1.1:9090
 --- !u!114 &8807248415062021574
 MonoBehaviour:
   m_ObjectHideFlags: 0

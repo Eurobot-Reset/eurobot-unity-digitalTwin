@@ -14,7 +14,7 @@ limitations under the License.
 */
 
 using UnityEngine;
-using System.Collections.Generic;
+// using System.Collections.Generic;
 
 namespace RosSharp.RosBridgeClient
 {
@@ -29,8 +29,8 @@ namespace RosSharp.RosBridgeClient
         public float angle = 180;
 	    public float angularResolution = 1;
         public bool hasNoise = true;
-        public int samples = 360;
-        public float update_rate = 0.001f;
+        public int samples = 1024;
+        public int update_rate = 10000;
         public float angle_min = 0;
         public float angle_max = 6.28f;
         public float angle_increment = 0.0174533f;
@@ -42,6 +42,8 @@ namespace RosSharp.RosBridgeClient
         private int numLines;
         private float error;
         public Color color = Color.blue;
+        private float previousScanTime = 0;
+        private float scanPeriod;
         public float[] ranges;
         public float[] intensities;
 
@@ -49,25 +51,33 @@ namespace RosSharp.RosBridgeClient
         {
             numLines = (int)(angle / angularResolution) + 1;
 
-            samples = numLines;
+            // samples = numLines;
             
             directions = new Vector3[samples];
             ranges = new float[samples];
             intensities = new float[samples];
             rays = new Ray[samples];
-            raycastHits = new RaycastHit[samples];
+            raycastHits = new RaycastHit[samples]; 
 
-            InvokeRepeating("UpdateStatus", 0.1f, update_rate);   
+            scanPeriod = samples / update_rate;
+
+            // InvokeRepeating("UpdateStatus", 0.1f, samples/update_rate);   
         }
 
-        void Update() 
+        /* void Update() 
         {
-            // Scan();
-        }
+            if (Time.realtimeSinceStartup >= previousScanTime + scanPeriod)
+            {
+                // Debug.Log("Updating LIDAR data");
+                Scan();
+                previousScanTime = Time.realtimeSinceStartup;
+            
+            }
+        }*/
 
         void UpdateStatus()
         {
-            Scan();
+            // Scan();
         }
 
         public float[] Scan()
@@ -87,15 +97,18 @@ namespace RosSharp.RosBridgeClient
             rays = new Ray[samples];
             raycastHits = new RaycastHit[samples];
             ranges = new float[samples];
+            intensities = new float[samples];
 
             error = (hasNoise ? Noise() : 0.0f);
 
             for (int i = 0; i < samples; i++)
             {
-                rays[i] = new Ray(transform.position, transform.rotation * Quaternion.AngleAxis(angle * 0.5f + (-1 * i * angularResolution), Vector3.up) * Vector3.forward);
+                intensities[i] = 1000;
+
+                // rays[i] = new Ray(transform.position, transform.rotation * Quaternion.AngleAxis(angle * 0.5f + (-1 * i * angularResolution), Vector3.up) * Vector3.forward);
                 // directions[i] = Quaternion.Euler(-transform.rotation.eulerAngles) * rays[i].direction;
                 
-                // rays[i] = new Ray(transform.position, Quaternion.Euler(new Vector3(0, angle_min - angle_increment * i * 180 / Mathf.PI, 0)) * transform.forward);
+                rays[i] = new Ray(transform.position, Quaternion.Euler(new Vector3(0, angle_min - angle_increment * i * 180 / Mathf.PI, 0)) * transform.forward);
                 directions[i] = Quaternion.Euler(-transform.rotation.eulerAngles) * rays[i].direction;
 
                 ranges[i] = range_max + error;

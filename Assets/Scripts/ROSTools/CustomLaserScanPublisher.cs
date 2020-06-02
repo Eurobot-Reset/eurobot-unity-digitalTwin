@@ -19,12 +19,13 @@ namespace RosSharp.RosBridgeClient
 {
     public class CustomLaserScanPublisher : UnityPublisher<MessageTypes.Sensor.LaserScan>
     {
-        public LaserScanReader laserScanReader;
+        public CustomLaserScanReader laserScanReader;
         public string FrameId = "Unity";
 
         private MessageTypes.Sensor.LaserScan message;
         private float scanPeriod;
         private float previousScanTime = 0;
+        private bool flag = true;
                 
         protected override void Start()
         {
@@ -34,8 +35,19 @@ namespace RosSharp.RosBridgeClient
 
         private void FixedUpdate()
         {
+            // Here goes govnocode
+            // if (flag)
+            // {
+            //     base.Start();
+            //     InitializeMessage();
+            //     laserScanReader.Start();
+
+            //     flag = false;
+            // }
+
             if (Time.realtimeSinceStartup >= previousScanTime + scanPeriod)
             {
+                // Debug.Log("Updating LIDAR data");
                 UpdateMessage();
                 previousScanTime = Time.realtimeSinceStartup;
             }
@@ -61,8 +73,10 @@ namespace RosSharp.RosBridgeClient
 
         private void UpdateMessage()
         {
+            // Debug.Log(laserScanReader.samples);
             message.header.Update();
             message.ranges = laserScanReader.Scan();
+            message.intensities = laserScanReader.intensities;
             Publish(message);
         }
     }
