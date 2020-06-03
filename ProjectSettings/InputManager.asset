@@ -361,8 +361,8 @@ InputManager:
     m_Name: FatBoySide
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: j
-    positiveButton: l
+    negativeButton: l
+    positiveButton: j
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 3

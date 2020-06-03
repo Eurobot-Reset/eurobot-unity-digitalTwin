@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RosSharp.RosBridgeClient;
+
 public class ControlSuck : MonoBehaviour
 {
     public GameObject Suck_1_Left;
@@ -28,7 +29,7 @@ public class ControlSuck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(customMsgSubscriber.data);
+        // Debug.Log(customMsgSubscriber.data);
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Previous_Suck = Current_Suck;
