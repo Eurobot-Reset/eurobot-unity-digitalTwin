@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UI_color_display : MonoBehaviour
 {
     public Text Text_Side;
-    public Text Text_Side_Fatboy;
+    public Text Text_Side_Racer;
 
     private bool racer;
     private bool fatboy;
@@ -29,16 +29,17 @@ public class UI_color_display : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    */
+*/
+ //   void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+ 
     void Update ()
     {
-        //Debug.Log("OnSceneLoaded: " + scene.name);
-        //racer = GameMode.robot[0];
-        //fatboy = GameMode.robot[1];
-        //racer_y = GameMode.isYellowSide[0];
-        //fatboy_y = GameMode.isYellowSide[1];
+       /* Debug.Log("OnSceneLoaded: " + scene.name);
+        racer = GameMode.robot[0];
+        fatboy = GameMode.robot[1];
+        racer_y = GameMode.isYellowSide[0];
+        fatboy_y = GameMode.isYellowSide[1];
+*/
         if (PlayerPrefs.GetString("Robot") == "Racer") racer = true;
         else racer = false;
         if (PlayerPrefs.GetString("Robot") == "Fatboy") fatboy = true;
@@ -48,31 +49,31 @@ public class UI_color_display : MonoBehaviour
         if (PlayerPrefs.GetString("Fatboy_color") == "Yellow") fatboy_y = true;
         else fatboy_y = false;
         
-        if (racer) // если Racer выбран, то выводим его цвет
+        if (GameMode.Game_2_active|fatboy) // если Fatboy выбран, то выводим его цвет
         {
-            if (racer_y)
-                Text_Side.text = "Racer side: <color=yellow>yellow</color>";
+            if (fatboy_y)
+                Text_Side.text = "Fatboy side: <color=yellow>yellow</color>";
             else
-                Text_Side.text = "Racer side: <color=blue>blue</color>";
+                Text_Side.text = "Fatboy side: <color=blue>blue</color>";
 
-            if (GameMode.strategyMode|GameMode.Game_2_active) // если Fatboy тоже  выбран (например Strategy mode), то выводим и его цвет
+            if (GameMode.Game_2_active) // если Racer тоже  выбран (например Strategy mode), то выводим и его цвет
             {
-                if (fatboy_y)
-                    y_string = "Fatboy side: <color=yellow>yellow</color>";
+                if (racer_y)
+                    y_string = "Racer side: <color=yellow>yellow</color>";
                 else
-                    y_string = "Fatboy side: <color=blue>blue</color>";
+                    y_string = "Racer side: <color=blue>blue</color>";
 
                 if (GameMode.strategyMode) Text_Side.text += "\n" + y_string;
-                else Text_Side_Fatboy.text= y_string;
+                else Text_Side_Racer.text = y_string;
             }
         }
 
-        else // если только Fatboy выбран, то выводим его цвет
+        else // если только Racer выбран, то выводим его цвет
         {
-            if (fatboy_y)
-                Text_Side.text = "Fatboy side:<color=yellow>yellow</color>";
+            if (racer_y)
+                Text_Side.text = "Racer side:<color=yellow>yellow</color>";
             else 
-                Text_Side.text = "Fatboy side: <color=blue> blue </color>";
+                Text_Side.text = "Racer side: <color=blue> blue </color>";
 
         }
     }
