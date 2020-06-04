@@ -1,0 +1,8 @@
+prefix=/home/sayan/catkin_ws/devel
+
+Name: eurobot_camera
+Description: Description of eurobot_camera
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

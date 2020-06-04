@@ -10485,21 +10485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2039dfa2a48230848be4104e77edb527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera_G1_racer: {fileID: 1118752116}
-  camera_G1_fatboy: {fileID: 452753849}
-  camera_G2_racer: {fileID: 1857653753}
-  camera_G2_fatboy: {fileID: 108006113}
-  camera_G2_racer_gripper_1: {fileID: 643220193}
-  camera_G2_racer_gripper_2: {fileID: 535144042}
-  camera_G2_racer_gripper_3: {fileID: 1601029044}
-  camera_G2_fatboy_gripper_1: {fileID: 86111470}
-  camera_G2_fatboy_gripper_2: {fileID: 2069128186}
-  camera_G2_fatboy_gripper_3: {fileID: 942604528}
-  camera_G2_up: {fileID: 1736777862}
-  game1_ui: {fileID: 672982624}
-  game2_ui: {fileID: 1717978361}
-  a: 1
-  b: 1
 --- !u!1 &647653682
 GameObject:
   m_ObjectHideFlags: 0
@@ -25579,13 +25564,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580627525}
-  m_LocalRotation: {x: 0.42933768, y: -0, z: -0, w: 0.9031441}
-  m_LocalPosition: {x: 18.5, y: 126.2, z: 137.7}
+  m_LocalRotation: {x: 0.5334595, y: -0, z: -0, w: 0.8458257}
+  m_LocalPosition: {x: 18.5, y: 128.08, z: 141.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 404829665}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50.851, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 64.479004, y: 0, z: 0}
 --- !u!81 &1580627527
 AudioListener:
   m_ObjectHideFlags: 0
@@ -25619,7 +25604,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 95
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -25669,8 +25654,8 @@ MonoBehaviour:
   Topic: /unity_camera/compressed
   ImageCamera: {fileID: 1580627528}
   FrameId: Camera
-  resolutionWidth: 640
-  resolutionHeight: 480
+  resolutionWidth: 2448
+  resolutionHeight: 2048
   qualityLevel: 100
 --- !u!114 &1580627531
 MonoBehaviour:
