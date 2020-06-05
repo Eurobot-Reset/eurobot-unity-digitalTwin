@@ -13,7 +13,7 @@ public class Gripper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        go_up = true;
     }
 
     // Update is called once per frame

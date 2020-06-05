@@ -17,6 +17,7 @@ limitations under the License.
 // © Siemens AG, 2018, Dr. Martin Bischoff (martin.bischoff@siemens.com)
 
 using UnityEngine;
+using System;
 
 namespace RosSharp.RosBridgeClient
 {
@@ -89,6 +90,10 @@ namespace RosSharp.RosBridgeClient
             rb.AddTorque(transform.up * angularVelocity.y * torqueScaleFactor);
 
             isMessageReceived = false;
+            
+            float[] speedMsgData = new float[] {linearVelocity.x, linearVelocity.z, angularVelocity.y};
+        
+            Debug.Log(speedMsgData);
         }
     }
 }

@@ -22,8 +22,8 @@ public class UI_Timer : MonoBehaviour
     void Update()
     {
         if (t <= 100f) Text_Timer.text = "Time:" + t.ToString("F0");
-        else Text_Timer.text = "Time: inf.";
-        t -= Time.deltaTime;
+        else Text_Timer.text = "Time: inf."; 
+        t -= (Time.deltaTime/2);
 
         if (t <= 0.0f)
         {

@@ -41636,8 +41636,8 @@ MonoBehaviour:
   y_gripper_up: 9
   Suck_Is_Active: 0
   gripper_action: release
-  remote_release: 0
   remote_collect: 0
+  remote_release: 0
 --- !u!136 &621491188517460287
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -73417,8 +73417,8 @@ MonoBehaviour:
   y_gripper_up: 9
   Suck_Is_Active: 0
   gripper_action: release
-  remote_release: 0
   remote_collect: 0
+  remote_release: 0
 --- !u!136 &4509602952145082808
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -74948,8 +74948,8 @@ MonoBehaviour:
   y_gripper_up: 9
   Suck_Is_Active: 0
   gripper_action: release
-  remote_release: 0
   remote_collect: 0
+  remote_release: 0
 --- !u!136 &4668857709566476233
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -88692,8 +88692,8 @@ MonoBehaviour:
   y_gripper_up: 9
   Suck_Is_Active: 0
   gripper_action: release
-  remote_release: 0
   remote_collect: 0
+  remote_release: 0
 --- !u!136 &6102289676167627083
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -94195,6 +94195,7 @@ GameObject:
   - component: {fileID: 6766900406854942851}
   - component: {fileID: 6766900406854942858}
   - component: {fileID: 6766900406854942850}
+  - component: {fileID: 6766900406854942860}
   m_Layer: 8
   m_Name: RobotRacer
   m_TagString: Untagged
@@ -94224,7 +94225,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6766900406854942847}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 1
   m_Drag: 3
   m_AngularDrag: 3
   m_UseGravity: 1
@@ -94256,7 +94257,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6766900406854942847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acbc1e16b585c2c869cfa066d986b1be, type: 3}
   m_Name: 
@@ -94410,6 +94411,27 @@ MonoBehaviour:
   data_str: 
   data_arr: []
   data_arr_len: 0
+--- !u!114 &6766900406854942860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766900406854942847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8396d833e8dbcfce8b9f33f3086d7065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RacerMsgSubscriber: {fileID: 6766900406854942850}
+  data: []
+  data_str: 
+  data_arr: []
+  data_arr_len: 0
+  linearVelocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: 0, z: 0}
+  speedScaleFactor: 4
+  torqueScaleFactor: 4
 --- !u!4 &6766997813445108379
 Transform:
   m_ObjectHideFlags: 0
@@ -97269,8 +97291,8 @@ MonoBehaviour:
   y_gripper_up: 9
   Suck_Is_Active: 0
   gripper_action: release
-  remote_release: 0
   remote_collect: 0
+  remote_release: 0
 --- !u!136 &7108115270534037956
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -109882,8 +109904,8 @@ MonoBehaviour:
   y_gripper_up: 9
   Suck_Is_Active: 0
   gripper_action: release
-  remote_release: 0
   remote_collect: 0
+  remote_release: 0
 --- !u!136 &8557319044946657102
 CapsuleCollider:
   m_ObjectHideFlags: 0
