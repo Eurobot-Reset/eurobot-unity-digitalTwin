@@ -3053,6 +3053,8 @@ MonoBehaviour:
   Topic: /secondary_robot/stm/command
   TimeStep: 0
   data: 
+  data_arr:
+  - Start recording
 --- !u!114 &186558817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41633,6 +41635,9 @@ MonoBehaviour:
   y_gripper_down: 6.4
   y_gripper_up: 9
   Suck_Is_Active: 0
+  gripper_action: release
+  remote_release: 0
+  remote_collect: 0
 --- !u!136 &621491188517460287
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65026,6 +65031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526185590421647283}
+  - component: {fileID: 3537079262581628321}
   m_Layer: 11
   m_Name: VacuumGrippers (2)
   m_TagString: Untagged
@@ -65033,6 +65039,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3537079262581628321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537079262581628320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d518bda9dfd2b4692b4239ca1176d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_down: 0
+  go_up: 0
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
 --- !u!23 &3540424043713266121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73393,6 +73416,9 @@ MonoBehaviour:
   y_gripper_down: 6.4
   y_gripper_up: 9
   Suck_Is_Active: 0
+  gripper_action: release
+  remote_release: 0
+  remote_collect: 0
 --- !u!136 &4509602952145082808
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -74921,6 +74947,9 @@ MonoBehaviour:
   y_gripper_down: 6.4
   y_gripper_up: 9
   Suck_Is_Active: 0
+  gripper_action: release
+  remote_release: 0
+  remote_collect: 0
 --- !u!136 &4668857709566476233
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -88662,6 +88691,9 @@ MonoBehaviour:
   y_gripper_down: 6.4
   y_gripper_up: 9
   Suck_Is_Active: 0
+  gripper_action: release
+  remote_release: 0
+  remote_collect: 0
 --- !u!136 &6102289676167627083
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -94153,6 +94185,7 @@ GameObject:
   - component: {fileID: 7760693684087026284}
   - component: {fileID: 6766900406854942853}
   - component: {fileID: 6766900406854942852}
+  - component: {fileID: 6766900406854942859}
   - component: {fileID: 6766900406854942848}
   - component: {fileID: 6766900406854942854}
   - component: {fileID: 6766900406854942855}
@@ -94214,6 +94247,8 @@ MonoBehaviour:
   Topic: /main_robot/stm/command
   TimeStep: 0
   data: 
+  data_arr:
+  - Start recording
 --- !u!114 &6766900406854942851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94346,6 +94381,35 @@ MonoBehaviour:
   Topic: /main_robot/unity_pose
   PublishedTransform: {fileID: 7760693684087026284}
   FrameId: Unity
+--- !u!114 &6766900406854942859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766900406854942847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9884216f8906484ac9b508e1228211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Suck11: {fileID: 6102289676167627081}
+  Suck12: {fileID: 7108115270534037954}
+  Suck21: {fileID: 621491188517460285}
+  Suck22: {fileID: 4509602952145082806}
+  Suck31: {fileID: 4668857709566476231}
+  Suck32: {fileID: 8557319044946657100}
+  Gripper1: {fileID: 0}
+  Gripper2: {fileID: 0}
+  Gripper3: {fileID: 0}
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
+  RacerMsgSubscriber: {fileID: 6766900406854942850}
+  data: []
+  data_str: 
+  data_arr: []
+  data_arr_len: 0
 --- !u!4 &6766997813445108379
 Transform:
   m_ObjectHideFlags: 0
@@ -97204,6 +97268,9 @@ MonoBehaviour:
   y_gripper_down: 6.4
   y_gripper_up: 9
   Suck_Is_Active: 0
+  gripper_action: release
+  remote_release: 0
+  remote_collect: 0
 --- !u!136 &7108115270534037956
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -103545,6 +103612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6592471410673579975}
+  - component: {fileID: 7865096984255464917}
   m_Layer: 11
   m_Name: VacuumGrippers
   m_TagString: Untagged
@@ -103552,6 +103620,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7865096984255464917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865096984255464916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d518bda9dfd2b4692b4239ca1176d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_down: 0
+  go_up: 0
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
 --- !u!33 &7866457921459590577
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -109796,6 +109881,9 @@ MonoBehaviour:
   y_gripper_down: 6.4
   y_gripper_up: 9
   Suck_Is_Active: 0
+  gripper_action: release
+  remote_release: 0
+  remote_collect: 0
 --- !u!136 &8557319044946657102
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -111515,6 +111603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5699732666477250889}
+  - component: {fileID: 8737789706794171227}
   m_Layer: 11
   m_Name: VacuumGrippers (1)
   m_TagString: Untagged
@@ -111522,6 +111611,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8737789706794171227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737789706794171226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d518bda9dfd2b4692b4239ca1176d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_down: 0
+  go_up: 0
+  velocity: 4
+  y_gripper_down: 6.4
+  y_gripper_up: 9
 --- !u!23 &8742166887945239659
 MeshRenderer:
   m_ObjectHideFlags: 0

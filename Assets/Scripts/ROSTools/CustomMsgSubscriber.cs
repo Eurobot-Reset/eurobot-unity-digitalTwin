@@ -17,12 +17,14 @@ limitations under the License.
 // © Siemens AG, 2018, Dr. Martin Bischoff (martin.bischoff@siemens.com)
 
 using UnityEngine;
+using System;
 
 namespace RosSharp.RosBridgeClient
 {
     public class CustomMsgSubscriber : UnitySubscriber<MessageTypes.Std.String>
     {
         public string data;
+	public string[] data_arr = {"Start recording"};
         private bool isMessageReceived;
 
         protected override void Start()
@@ -33,6 +35,8 @@ namespace RosSharp.RosBridgeClient
         protected override void ReceiveMessage(MessageTypes.Std.String message)
         {
             data = message.data;
+	    Array.Resize(ref data_arr, data_arr.Length + 1);
+	    data_arr[data_arr.Length - 1] = data;
             Debug.Log(data);
             isMessageReceived = true;
         }
