@@ -6,10 +6,10 @@ using System;
 
 public class CustomSpeedSubscriber : MonoBehaviour
 {
-    public CustomMsgSubscriber RacerMsgSubscriber;
-    public string[] data;
+    public CustomMsgSubscriber MsgSubscriber;
     public string data_str;
     public string[] data_arr;
+    public string data_item;
     public int data_arr_len = 0;
     int i;
     
@@ -33,23 +33,20 @@ public class CustomSpeedSubscriber : MonoBehaviour
     {
         if (isMessageReceived)
         {
-            data_arr = RacerMsgSubscriber.data_arr;
-            isMessageReceived = false;
-            for (i = data_arr_len; i < data_arr.Length; i++)
-            {
-                data_str = data_arr[i];
-                data = data_str.Split(null);
+            data_item = MsgSubscriber.data;
 
-                if (data.Length > 1)
+            if (data_item != "")
+            {
+                
+                data_arr = data_item.Split(null);
+
+                if (data_arr[1] == "8")
                 {
-                    if (data[1] == "8")
-                    {
-                        ProcessSpeedCommand(data[2], data[3], data[4]);
-                    }
+                    isMessageReceived = false;
+                    ProcessSpeedCommand(data_arr[2], data_arr[3], data_arr[4]);
                 }
             }
         }
-        
     }
 
     private void ProcessSpeedCommand(string x, string y, string w)
