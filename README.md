@@ -1,10 +1,14 @@
 # Eurobot Unity 2020
 
-### install this respository 
+### Install this respository 
 
 git clone https://github.com/Eurobot-Reset/eurobot-unity-digitalTwin.git
 
-### to make new branch
+### Link to the presentation
+
+https://docs.google.com/presentation/d/1jqn6J_FduEhbOO8Rc5c7lhqrliscYYQ8WZq_qtzbk0U/edit?usp=sharing
+
+### To make new branch
 ```
 git checkout -b BRANCH_NAME
 ```
