@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.XR;
+//using UnityEditor.XR;
 using UnityEngine;
 
 public class UI_mode_2 : MonoBehaviour

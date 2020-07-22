@@ -19,7 +19,9 @@ public class Suck : MonoBehaviour
 
     private Vector3 _followOffsetPosition;
     private Quaternion _followOffsetRotation;
-    private string gripper_action = "release";
+    public string gripper_action = "release";
+    public bool remote_collect = false;
+    public bool remote_release = false;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +80,16 @@ public class Suck : MonoBehaviour
            } 
        }
 
+       if ((remote_release) && (Cup != null))
+           {
+	       gripper_action = "release";
+               Cup.transform.parent = CupsFree.transform;
+               Cup.GetComponent<Rigidbody>().useGravity = true;
+               Cup = null;
+               Cup_taken = false;
+	       remote_release = false;
+	   }
+
        if (Cup != null)
        {
            Cup.transform.localPosition = _followOffsetPosition;
@@ -90,7 +102,7 @@ public class Suck : MonoBehaviour
         //Debug.Log("Collided with: " );
         if ((other.gameObject.tag == "GreenCups") || (other.gameObject.tag == "RedCups"))
         {
-            if (gripper_action == "collect")
+            if ((gripper_action == "collect") || (remote_collect))
             {
                 Cup = other.gameObject;
                 if (!Cup_taken)
@@ -101,6 +113,7 @@ public class Suck : MonoBehaviour
                     Cup.GetComponent<Rigidbody>().useGravity = false;
                     Cup_taken = true;
                 }
+		remote_collect = false;
             }
 
         }
