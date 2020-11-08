@@ -21,7 +21,7 @@ public class UI_Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (t <= 100f) Text_Timer.text = "Time:" + t.ToString("F0");
+        if (t <= 200f) Text_Timer.text = "Time:" + t.ToString("F0");
         else Text_Timer.text = "Time: inf."; 
         t -= (Time.deltaTime/2);
 

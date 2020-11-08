@@ -19,6 +19,7 @@ public class GripperCollision : MonoBehaviour
         if ((other.gameObject.tag == "GreenCups") || (other.gameObject.tag == "RedCups"))
         {           
             this.transform.parent.transform.parent.transform.parent.GetComponent<Rotation>().GripperTake(other, this.name);
+            this.transform.parent.transform.parent.transform.parent.GetComponent<Rotation>().GripperTakeSingle(other, this.name);
         }
     }
 

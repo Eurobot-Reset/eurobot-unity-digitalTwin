@@ -2972,6 +2972,8 @@ Transform:
   - {fileID: 1793358354}
   - {fileID: 912385329}
   - {fileID: 58049348}
+  - {fileID: 355848740}
+  - {fileID: 1717253537}
   - {fileID: 8313950485367081143}
   - {fileID: 1649691628}
   - {fileID: 1836807162}
@@ -4741,8 +4743,10 @@ GameObject:
   - component: {fileID: 305997637}
   - component: {fileID: 305997639}
   - component: {fileID: 305997638}
+  - component: {fileID: 305997640}
+  - component: {fileID: 305997641}
   m_Layer: 11
-  m_Name: Body1
+  m_Name: CupTakerFat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4756,7 +4760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305997636}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 552870642}
@@ -4809,6 +4813,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305997636}
   m_Mesh: {fileID: 8604045607132181640, guid: 9bd62f459a5b4004392fe9a9590ba4d9, type: 3}
+--- !u!114 &305997640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305997636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8853ae5bfbdea047bb52ff56581e001f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SideTakerOpen_1: 0
+  SideTakerClose_1: 0
+  BasePosition: 0
+  From_180_to_360: 0
+  Direction: 0
+  angle: 0
+  From_0_to_180: 0
+  Direction_2: 0
+  angle_2: 0
+  angleSpeed: 0
+  Action_take: 0
+  release: 0
+  Cup_taken: 0
+--- !u!65 &305997641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305997636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.002, y: 0.002, z: 0.002}
+  m_Center: {x: -2.8993682e-11, y: 0.008825001, z: -0.001297156}
 --- !u!1 &313351110
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,6 +5622,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354600349}
   m_Mesh: {fileID: 3422549457327378764, guid: 04346b9ff9b88874b8d8753dcee8a26c, type: 3}
+--- !u!1 &355848739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355848740}
+  m_Layer: 11
+  m_Name: AxisFatRotation2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &355848740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355848739}
+  m_LocalRotation: {x: -0, y: 0.20849288, z: -0, w: 0.9780239}
+  m_LocalPosition: {x: 0.0012500664, y: -0.03677999, z: -0.09515993}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 186558811}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &355867525
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,6 +5802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 362963668}
+  - component: {fileID: 362963669}
   m_Layer: 11
   m_Name: Rotating Jaw 2
   m_TagString: Untagged
@@ -5755,6 +5828,31 @@ Transform:
   m_Father: {fileID: 1436726478}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362963669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362963667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db34beb135e9f7384138f64ccfdfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Uppear_board: 330
+  Lower_board: 280
+  Jaw1_open: 0
+  Jaw2_open: 1
+  Jaw3_open: 0
+  Jaw4_open: 0
+  Jaw5_open: 0
+  Jaw1_close: 0
+  Jaw2_close: 0
+  Jaw3_close: 0
+  Jaw4_close: 0
+  Jaw5_close: 0
+  angleSpeed: 20
 --- !u!1 &366038500
 GameObject:
   m_ObjectHideFlags: 0
@@ -9487,7 +9585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552870642}
   m_Layer: 11
-  m_Name: Shell Actuator
+  m_Name: Shell Actuator5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17419,6 +17517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1062790161}
+  - component: {fileID: 1062790162}
   m_Layer: 11
   m_Name: Rotating Jaw 1
   m_TagString: Untagged
@@ -17444,6 +17543,31 @@ Transform:
   m_Father: {fileID: 1436726478}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1062790162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062790160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db34beb135e9f7384138f64ccfdfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Uppear_board: 330
+  Lower_board: 280
+  Jaw1_open: 1
+  Jaw2_open: 0
+  Jaw3_open: 0
+  Jaw4_open: 0
+  Jaw5_open: 0
+  Jaw1_close: 0
+  Jaw2_close: 0
+  Jaw3_close: 0
+  Jaw4_close: 0
+  Jaw5_close: 0
+  angleSpeed: 20
 --- !u!1 &1064698381
 GameObject:
   m_ObjectHideFlags: 0
@@ -26414,6 +26538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1608404300}
+  - component: {fileID: 1608404301}
   m_Layer: 11
   m_Name: Rotating Jaw 3
   m_TagString: Untagged
@@ -26439,6 +26564,31 @@ Transform:
   m_Father: {fileID: 1436726478}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608404301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608404299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db34beb135e9f7384138f64ccfdfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Uppear_board: 330
+  Lower_board: 280
+  Jaw1_open: 0
+  Jaw2_open: 0
+  Jaw3_open: 1
+  Jaw4_open: 0
+  Jaw5_open: 0
+  Jaw1_close: 0
+  Jaw2_close: 0
+  Jaw3_close: 0
+  Jaw4_close: 0
+  Jaw5_close: 0
+  angleSpeed: 20
 --- !u!1 &1618096664
 GameObject:
   m_ObjectHideFlags: 0
@@ -27101,7 +27251,7 @@ GameObject:
   - component: {fileID: 1649691628}
   - component: {fileID: 1649691629}
   m_Layer: 11
-  m_Name: cups_taker_R
+  m_Name: cups_taker_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27122,7 +27272,7 @@ Transform:
   - {fileID: 233208871}
   - {fileID: 1182462315}
   m_Father: {fileID: 186558811}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 1.125, z: 0}
 --- !u!95 &1649691629
 Animator:
@@ -27918,6 +28068,36 @@ Transform:
   - {fileID: 366314889}
   m_Father: {fileID: 482028473}
   m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1717253536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1717253537}
+  m_Layer: 11
+  m_Name: AxisFatRotation1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1717253537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717253536}
+  m_LocalRotation: {x: -3.5374705e-19, y: 0.30367738, z: -3.6041037e-17, w: 0.95277494}
+  m_LocalPosition: {x: 0.0017100712, y: -0.036779992, z: 0.09536012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 186558811}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717582434
 GameObject:
@@ -30525,7 +30705,7 @@ Transform:
   - {fileID: 2069128187}
   - {fileID: 942604529}
   m_Father: {fileID: 186558811}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839394594
 GameObject:
@@ -32448,6 +32628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925660044}
+  - component: {fileID: 1925660045}
   m_Layer: 11
   m_Name: Rotating Jaw 5
   m_TagString: Untagged
@@ -32473,6 +32654,31 @@ Transform:
   m_Father: {fileID: 1436726478}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1925660045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925660043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db34beb135e9f7384138f64ccfdfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Uppear_board: 330
+  Lower_board: 280
+  Jaw1_open: 0
+  Jaw2_open: 0
+  Jaw3_open: 0
+  Jaw4_open: 0
+  Jaw5_open: 1
+  Jaw1_close: 0
+  Jaw2_close: 0
+  Jaw3_close: 0
+  Jaw4_close: 0
+  Jaw5_close: 0
+  angleSpeed: 20
 --- !u!1 &1926688309
 GameObject:
   m_ObjectHideFlags: 0
@@ -64863,6 +65069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7835928356360738236}
+  - component: {fileID: 3515416719095645001}
   m_Layer: 11
   m_Name: Rotating Jaw 4
   m_TagString: Untagged
@@ -64870,6 +65077,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3515416719095645001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3515416719095645000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0db34beb135e9f7384138f64ccfdfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Uppear_board: 330
+  Lower_board: 280
+  Jaw1_open: 0
+  Jaw2_open: 0
+  Jaw3_open: 0
+  Jaw4_open: 1
+  Jaw5_open: 0
+  Jaw1_close: 0
+  Jaw2_close: 0
+  Jaw3_close: 0
+  Jaw4_close: 0
+  Jaw5_close: 0
+  angleSpeed: 20
 --- !u!33 &3519961933181466670
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -78144,7 +78376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8313950485367081143}
   m_Layer: 11
-  m_Name: cups_taker_L
+  m_Name: cups_taker_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78841,13 +79073,53 @@ GameObject:
   - component: {fileID: 8764104465505603559}
   - component: {fileID: 2766492303197192762}
   - component: {fileID: 5533110967990882240}
+  - component: {fileID: 5073583395783951731}
+  - component: {fileID: 5073583395783951730}
   m_Layer: 11
-  m_Name: Body1
+  m_Name: CupTakerFat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5073583395783951730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5073583395783951729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.002, y: 0.002, z: 0.002}
+  m_Center: {x: -0.00000001493982, y: 0.008825001, z: -0.0012971709}
+--- !u!114 &5073583395783951731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5073583395783951729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cc2a5164cb6e63c9598aaa5c5425c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SideTakerOpen_2: 0
+  SideTakerClose_2: 0
+  BasePosition_2: 0
+  From_180_to_360_R: 0
+  Direction_R: 0
+  angle_R: 0
+  From_0_to_180_R: 0
+  Direction_2_R: 0
+  angle_2_R: 0
+  angleSpeed: 0
+  Action_take: 0
+  release: 0
+  Cup_taken: 0
 --- !u!1 &5074624375000240956
 GameObject:
   m_ObjectHideFlags: 0
@@ -105878,6 +106150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5058618704954676212}
   - component: {fileID: 8099876976647381480}
+  - component: {fileID: 8099876976647381481}
   m_Layer: 11
   m_Name: Lifting Mechanism - Nema 17 v2
   m_TagString: Untagged
@@ -105899,6 +106172,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angleSpeed: 20
   velocity: 10
+  RacerMsgSubscriber: {fileID: 186558816}
+  data: []
+  data_str: 
+  data_arr: []
+  data_arr_len: 0
+  LiftingMechanism: {fileID: 8099876976647381479}
+  SideTakerOpen_1: 0
+  SideTakerOpen_2: 0
+  SideTakerClose_1: 0
+  SideTakerClose_2: 0
+--- !u!114 &8099876976647381481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099876976647381479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28399711ee542eef0ac839b315a02b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_arm_down: 0
+  go_arm_up: 0
+  go_arm_middle: 0
+  arm_velocity: 4
+  y_arm_down: 6.4
+  y_arm_up: 9
 --- !u!33 &8101129629456999160
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -107880,7 +108181,7 @@ Transform:
   - {fileID: 2036097125}
   - {fileID: 1937046643}
   m_Father: {fileID: 186558811}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 114.06801, z: 0}
 --- !u!23 &8315939026813657074
 MeshRenderer:
