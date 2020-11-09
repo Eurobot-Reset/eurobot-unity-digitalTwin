@@ -51,9 +51,23 @@ public class CustomSpeedSubscriber : MonoBehaviour
 
     private void ProcessSpeedCommand(string x, string y, string w)
     {
-        float _x = float.Parse(x);
-        float _y = float.Parse(y);
-        float _w = -float.Parse(w);
+        //Debug.Log("x: " + x);
+        //Debug.Log("y: " + y);
+        //Debug.Log("w: " + w);
+
+        //float.TryParse(x, out float _x);
+        //float.TryParse(y, out float _y);
+        //float.TryParse(w, out float _w);
+
+        float _x;
+        float _y;
+        float _w;
+
+        _x = (float) Convert.ToDouble(x, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+        _y = (float) Convert.ToDouble(y, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+        _w = (float) Convert.ToDouble(w, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+
+        _w = - _w;
         
         float[] speedMsgData = new float[] {_x, _y, _w};
         
